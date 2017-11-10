@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ese.mappers.manage.part.PartMapper">
+	<insert id="addPart" parameterType="Part">
+		insert into sc_part 
+			(PART_NO, PART_NAME, PART_PRICE, PART_COST, PART_QTY, PART_ID, DIVISION_ID, PART_INFO, PART_IMAGEPATH)
+		values
+			(seq_part.nextval,#{name},#{price},#{cost},#{qty},#{partStatus.id},#{division.id},#{info},#{imagepath})
+	</insert>
+	<select id="getParts" parameterType="Division" resultType="Part">
+		select
+			A.PART_NO 			no,
+			A.PART_NAME			name,
+			A.PART_PRICE		price,
+			A.PART_COST			cost,
+			A.PART_QTY			qty,
+			B.PART_STATUS		"partStatus.status",
+			C.DIVISION_NAME		"division.name",
+			A.PART_INFO			info,
+			A.PART_IMAGEPATH	imagepath
+		from
+			sc_part A, PART_STATUS B, (select 
+											A.DIVISION_ID,
+											A.DIVISION_NAME
+										from
+											SC_DIVISION A, SC_CATEGORY B
+										where
+											A.CATEGORY_ID = B.CATEGORY_ID
+										<if test="category.id == 'phone'">
+											and
+												A.CATEGORY_ID = #{category.id}
+										</if>
+										<if test="category.id == 'computer'">
+											and
+												A.CATEGORY_ID = #{category.id}
+										</if>
+										<if test="category.id == 'appliances'">
+											and
+												A.CATEGORY_ID = #{category.id}
+										</if>
+										) C
+		where
+			A.PART_ID = B.PART_ID
+		and
+			A.DIVISION_ID = C.DIVISION_ID
+		<if test="id=='battery'">
+		and	
+			A.DIVISION_ID = #{id}
+		</if>
+		<if test="id=='headset'">
+		and
+			A.DIVISION_ID = #{id}
+		</if>
+		<if test="id=='earmicphone'">
+		and
+			A.DIVISION_ID = #{id}
+		</if>
+		<if test="id=='charger'">
+		and
+			A.DIVISION_ID = #{id}
+		</if>
+		<if test="id=='case'">
+		and
+			A.DIVISION_ID = #{id}
+		</if>
+		<if test="id=='phoneaccessory'">
+		and
+			A.DIVISION_ID = #{id}
+		</if>
+		<if test="id=='computeraccessory'">
+		and
+			A.DIVISION_ID = #{id}
+		</if>
+		<if test="id=='computerexpendables'">
+		and
+			A.DIVISION_ID = #{id}
+		</if>
+		<if test="id=='computerpart'">
+		and
+			A.DIVISION_ID = #{id}
+		</if>
+		<if test="id=='airconpart'">
+		and
+			A.DIVISION_ID = #{id}
+		</if>
+		<if test="id=='cleanerpart'">
+		and
+			A.DIVISION_ID = #{id}
+		</if>
+		<if test="id=='washerpart'">
+		and
+			A.DIVISION_ID = #{id}
+		</if>
+		<if test="id=='Refrigeratorpart'">
+		and
+			A.DIVISION_ID = #{id}
+		</if>
+		order by
+			A.PART_NO asc
+	</select>
+	<select id="getPartByNo" parameterType="int" resultType="Part">
+		select
+			A.PART_NO 			no,
+			A.PART_NAME			name,
+			A.PART_PRICE		price,
+			A.PART_COST			cost,
+			A.PART_QTY			qty,
+			B.PART_STATUS		"partStatus.status",
+			C.DIVISION_NAME		"division.name",
+			A.PART_INFO			info,
+			A.PART_IMAGEPATH	imagepath
+		from
+			sc_part A, PART_STATUS B, (select 
+											A.DIVISION_ID,
+											A.DIVISION_NAME
+										from
+											SC_DIVISION A, SC_CATEGORY B
+										where
+											A.CATEGORY_ID = B.CATEGORY_ID)C
+		where
+			A.PART_ID = B.PART_ID
+		and
+			A.DIVISION_ID = C.DIVISION_ID
+		and
+			A.PART_NO = #{value}
+	</select>
+	<select id="getAllParts" resultType="Part">
+		select
+			A.PART_NO 			no,
+			A.PART_NAME			name,
+			A.PART_PRICE		price,
+			A.PART_COST			cost,
+			A.PART_QTY			qty,
+			B.PART_STATUS		"partStatus.status",
+			C.DIVISION_NAME		"division.name",
+			A.PART_INFO			info,
+			A.PART_IMAGEPATH	imagepath
+		from
+			sc_part A, PART_STATUS B, (select 
+											A.DIVISION_ID,
+											A.DIVISION_NAME
+										from
+											SC_DIVISION A, SC_CATEGORY B
+										where
+											A.CATEGORY_ID = B.CATEGORY_ID)C
+		where
+			A.PART_ID = B.PART_ID
+		and
+			A.DIVISION_ID = C.DIVISION_ID
+	</select>
+	<select id="getDivisions" parameterType="string" resultType="Division">
+		select
+			A.DIVISION_ID	id,
+			A.DIVISION_NAME	name
+		from
+			SC_DIVISION A, SC_CATEGORY B
+		where
+			A.CATEGORY_ID = B.CATEGORY_ID
+		<if test="_parameter == 'phone'">
+			and
+				A.CATEGORY_ID = #{_parameter}
+		</if>
+		<if test="_parameter == 'computer'">
+			and
+				A.CATEGORY_ID = #{_parameter}
+		</if>
+		<if test="_parameter == 'appliances'">
+			and
+				A.CATEGORY_ID = #{_parameter}
+		</if>
+		order by
+			A.DIVISION_ID asc
+	</select>
+	<select id="getCategory" resultType="Category">
+		select
+			CATEGORY_ID		id,
+			CATEGORY_NAME	name
+		from
+			SC_CATEGORY
+		order by
+			CATEGORY_ID desc
+	</select>
+	<update id="updatePart" parameterType="Part">
+		update sc_part
+		set
+			part_qty = #{qty}
+		where
+			part_no = #{no}
+	</update>
+</mapper>

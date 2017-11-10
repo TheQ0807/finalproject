@@ -1,0 +1,170 @@
+<%@ page pageEncoding="UTF-8"%>
+
+<style>
+
+.container {
+	width:1024px;
+}
+
+li {
+	list-style: none;
+	padding-bottom: 6px;
+}
+
+.imgs {
+	border: 1px solid black;
+	display: none;
+}
+
+#threePalace {
+	width: 190px;
+	height: 80px;
+}
+
+.m1, .m2, .m3, .m4, .m5, .m6 {
+	font-weight: bold;
+	color: black;
+	font-size: 17px;
+}
+
+.collapse1 {
+	display: none;
+	font-size: 16px;
+	color: #282828;
+	margin-bottom: 17px;
+	z-index: 999;
+	position: absolute;
+	width:100%;
+	background-color:white;
+}
+
+#abc {
+	width: auto;
+	height: auto;
+}
+
+.collapse ul {
+	margin-top: 8px;
+}
+
+#m1 {
+	height: 225px;
+	padding-left: 20px;
+}
+
+#m2 {
+	height: 225px;
+	border-left: 1px solid black;
+	padding-left: 20px;
+}
+
+#m3 {
+	height: 225px;
+	border-left: 1px solid black;
+	padding-left: 20px;
+}
+
+#m4 {
+	height: 225px;
+	border-left: 1px solid black;
+	padding-left: 20px;
+}
+
+#m5 {
+	height: 225px;
+	border-left: 1px solid black;
+	padding-left: 20px;
+}
+
+#m6 {
+	height: 225px;
+	border-left: 1px solid black;
+	padding-left: 20px;
+}
+
+#e {
+	display: none;
+	width: 100%;
+	height: 370px;
+	background-color: white;
+	position: absolute;
+	z-index: 800;
+}
+</style>
+<div class="container">
+	<div class="gnb-inner-wrap">
+		<h1 class="ss-logo">
+			<a href="#"><img src="/resources/images/main/icon/logo.jpg" id="threePalace" />E.S서비스센터</a>
+		</h1>
+		<div id="gnbArea">
+			<ul class="nav nav-tabs nav-justified">
+				<li><a href="#" class="m1">다운로드</a>
+				<div class="collapse1">
+						<ul id="m1">
+							<li><a class="btn" href="#"></a></li>
+							<li><a class="btn" href="#"></a></li>
+							<li><a class="btn" href="#"></a></li>
+							<li><a class="btn" href="#"></a></li>
+							<li><a class="btn" href="#"></a></li>
+							<li><a class="btn" href="#"></a></li>
+						</ul>
+					</div>
+				</li>
+				
+				<li><a href="#" class="m2">서비스 신청/안내</a>
+					<div class="collapse1">
+						<ul id="m2">
+							<li><a class="btn" href="#">센터 찾기</a></li>
+							<li><a class="btn" href="#">전화상담 예약</a></li>
+							<li><a class="btn" href="#">센터방문 예약</a></li>
+							<li><a class="btn" href="#">출장서비스 예약</a></li>
+							<li><a class="btn" href="#">예약 조회/변경/취소</a></li>
+							<li><a class="btn" href="#">서비스 요금안내</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="#" class="m4">회사소개</a>
+					<div class="collapse1">
+						<ul id="m4">
+							<li><a class="btn" href="#">CEO인사말</a></li>
+							<li><a class="btn" href="#">기업정보</a></li>
+							<li><a class="btn" href="#">사회공헌 활동</a></li>
+							<li><a class="btn" href="#">인재상</a></li>
+							<li><a class="btn" href="#">윤리경영</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="#" class="m5">공지사항</a>
+					<div class="collapse1">
+						<ul id="m5">
+							<li><a class="btn" href="#">공지사항</a></li>
+							<li><a class="btn" href="#">서비스 뉴스</a></li>
+							<li><a class="btn" href="#">이벤트</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="#" target="svcShop" title="새창으로 열기" class="m6">부품&amp;소모품구매</a>
+					<div class="collapse1">
+						<ul id="m6">
+							<li><a href="#" class="btn" target="svcShop" title="새창으로 열기" id="phone">휴대폰</a></li>
+							<li><a href="#" class="btn" target="svcShop" title="새창으로 열기"id="computer">컴퓨터/주변기기</a></li>
+							<li><a href="#" class="btn" target="svcShop" title="새창으로 열기" id="music">영상/음향기기</a></li>
+							<li><a href="#" class="btn" target="svcShop" title="새창으로 열기" id="item">생활가전용품</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function() {
+		$("#gnbArea").hover(function() {
+			$(".collapse1").show();
+			$("#e").show();
+		}, function() {
+			$(".collapse1").hide();
+			$("#e").hide();
+		});
+	})
+</script>

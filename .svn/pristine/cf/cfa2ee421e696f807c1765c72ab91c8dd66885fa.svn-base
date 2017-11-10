@@ -1,0 +1,8 @@
+package com.ese.mappers.manage;
+
+import com.ese.vo.hr.Employee;
+
+public interface EmployeeMapper {
+
+	Employee getAllEmp();
+}

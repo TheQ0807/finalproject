@@ -1,0 +1,11 @@
+package com.ese.service.manage;
+
+import java.util.List;
+
+import com.ese.vo.hr.Employee;
+
+public interface EmployeeService {
+
+	List<Employee> getAllEmp();
+	void addEmp(Employee employee);
+}

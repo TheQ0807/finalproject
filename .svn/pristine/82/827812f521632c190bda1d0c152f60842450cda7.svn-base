@@ -1,0 +1,19 @@
+package com.ese.service.notice;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ese.mappers.notice.CustomerNoticeMapper;
+import com.ese.vo.notice.CustomerNotice;
+
+@Service
+public class CustomerNoticeServiceImpl implements CustomerNoticeService {
+	
+	@Autowired
+	CustomerNoticeMapper customerNoticeMapper;
+	
+	public void addBoard(CustomerNotice customerNotice) {
+		// TODO Auto-generated method stub
+		customerNoticeMapper.addBoard(customerNotice);
+	}
+}

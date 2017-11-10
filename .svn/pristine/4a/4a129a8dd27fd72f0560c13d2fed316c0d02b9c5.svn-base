@@ -1,0 +1,13 @@
+package com.ese.mappers.notice;
+
+import java.util.List;
+
+import com.ese.vo.notice.EmployeeNotice;
+
+public interface EmployeeNoticeMapper {
+
+	void addBoard(EmployeeNotice employeeNotice);
+	List<EmployeeNotice> getAllBoards();
+	EmployeeNotice getBoardByNo(int boardNo);
+	void updateBoard(EmployeeNotice employeeNotice);
+}

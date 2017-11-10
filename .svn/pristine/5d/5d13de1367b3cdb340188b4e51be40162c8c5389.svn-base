@@ -1,0 +1,61 @@
+package com.ese.controller.manage;
+
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ese.controller.form.personnel.EmployeeForm;
+import com.ese.service.manage.EmployeeService;
+import com.ese.vo.afterservice.Center;
+import com.ese.vo.hr.Department;
+import com.ese.vo.hr.Employee;
+import com.ese.vo.hr.Position;
+
+@Controller
+public class Employeecontroller {
+
+	@Autowired
+	EmployeeService employeeService;
+	
+	
+	@RequestMapping("/emplist.do")
+	public String getAllEmp(Model model) {
+		model.addAttribute("employees", employeeService.getAllEmp());
+		return "manage/personnel/personnelList";
+	}
+	
+	@RequestMapping("/form.do")
+	public String form(Model model) {
+		model.addAttribute("employeeForm", new EmployeeForm());
+		return "manage/personnel/personnelAdd";
+	}
+	
+	
+	@RequestMapping("/addemp.do")
+	public String register(@Valid EmployeeForm employeeForm, BindingResult errors) {
+		
+		Center center = new Center(); 
+		center.setNo(employeeForm.getCenter());
+		Department department = new Department();
+		department.setId(employeeForm.getDepartment());
+		Position position = new Position();
+		position.setId(employeeForm.getPosition());
+	
+		System.out.println(employeeForm);
+		Employee employee = new Employee();
+		BeanUtils.copyProperties(employeeForm, employee);
+		employee.setCenter(center);
+		employee.setDepartment(department);
+		employee.setPosition(position);
+		
+		employeeService.addEmp(employee);
+		
+		return "redirect:/form.do";
+	}
+}

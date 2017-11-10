@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ese.mappers.manage.part.PartMapper">
+	<select id="getParts" parameterType="Division" resultType="Part">
+		select
+			A.PART_NO 			no,
+			A.PART_NAME			name,
+			A.PART_PRICE		price,
+			A.PART_COST			cost,
+			A.PART_QTY			qty,
+			B.PART_STATUS		"status.status",
+			C.DIVISION_NAME		"division.name",
+			A.PART_INFO			info,
+			A.PATH_IMAGEPATH	imagepath
+		from
+			sc_part A, PART_STATUS B, (select 
+											A.DIVISION_ID,
+											A.DIVISION_NAME
+										from
+											SC_DIVISION A, SC_CATEGORY B
+										where
+											A.CATEGORY_ID = B.CATEGORY_ID
+										<if test="category.id == '1'">
+											and
+												A.CATEGORY_ID = 1
+										</if>
+										<if test="category.id == '2'">
+											and
+												A.CATEGORY_ID = 2
+										</if>
+										<if test="category.id == '3'">
+											and
+												A.CATEGORY_ID = 3
+										</if>
+										) C
+		where
+			A.PART_ID = B.PART_ID
+		and
+			A.DIVISION_ID = C.DIVISION_ID
+		<if test="id==1">
+		and	
+			A.DIVISION_ID = 1
+		</if>
+		<if test="id==2">
+		and
+			A.DIVISION_ID = 2
+		</if>
+		<if test="id==3">
+		and
+			A.DIVISION_ID = 3
+		</if>
+		<if test="id==4">
+		and
+			A.DIVISION_ID = 4
+		</if>
+		<if test="id==5">
+		and
+			A.DIVISION_ID = 5
+		</if>
+		<if test="id==6">
+		and
+			A.DIVISION_ID = 6
+		</if>
+		<if test="id==7">
+		and
+			A.DIVISION_ID = 7
+		</if>
+		<if test="id==8">
+		and
+			A.DIVISION_ID = 8
+		</if>
+		<if test="id==9">
+		and
+			A.DIVISION_ID = 9
+		</if>
+		<if test="id==10">
+		and
+			A.DIVISION_ID = 10
+		</if>
+		<if test="id==11">
+		and
+			A.DIVISION_ID = 11
+		</if>
+		<if test="id==12">
+		and
+			A.DIVISION_ID = 12
+		</if>
+		order by
+			A.PART_NO asc
+	</select>
+	<select id="getDivisions" parameterType="String" resultType="Division">
+		select
+			A.DIVISION_ID,
+			A.DIVISION_NAME
+		from
+			SC_DIVISION A, SC_CATEGORY B
+		where
+			A.CATEGORY_ID = B.CATEGORY_ID
+		<if test="category.id == '1'">
+			and
+				A.CATEGORY_ID = 1
+		</if>
+		<if test="category.id == '2'">
+			and
+				A.CATEGORY_ID = 2
+		</if>
+		<if test="category.id == '3'">
+			and
+				A.CATEGORY_ID = 3
+		</if>
+		order by
+			A.DIVISION_ID asc
+	</select>
+	<select id="getCategory" resultType="Category">
+		select
+			CATEGORY_ID		id,
+			CATEGORY_NAME	name
+		from
+			SC_CATEGORY
+		order by
+			CATEGORY_ID asc
+	</select>
+</mapper>

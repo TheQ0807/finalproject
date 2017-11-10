@@ -1,0 +1,8 @@
+package com.ese.service.notice;
+
+import com.ese.vo.notice.CustomerNotice;
+
+public interface CustomerNoticeService {
+
+	void addBoard(CustomerNotice customerNotice);
+}

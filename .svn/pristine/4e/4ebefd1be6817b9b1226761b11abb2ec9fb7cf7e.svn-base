@@ -1,0 +1,9 @@
+package com.ese.mappers.notice;
+
+import com.ese.vo.notice.CustomerNotice;
+
+public interface CustomerNoticeMapper {
+	
+	void addBoard(CustomerNotice customerNotice);
+	
+}

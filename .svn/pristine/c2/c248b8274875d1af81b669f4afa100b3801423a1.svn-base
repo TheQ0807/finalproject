@@ -1,0 +1,22 @@
+package com.ese.controller.manage;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ese.service.manage.EmployeeService;
+
+@Controller
+public class Employeecontroller {
+
+	@Autowired
+	EmployeeService employeeService;
+	
+	
+	@RequestMapping("/emplist.do")
+	public String getAllEmp(Model model) {
+		model.addAttribute("employees", employeeService.getAllEmp());
+		return "manage/personnel/personnelList";
+	}
+}

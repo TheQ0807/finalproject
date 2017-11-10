@@ -1,0 +1,13 @@
+package com.ese.controller.servicecenter.user;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+public class SCUserController {
+
+	@RequestMapping("/user/register.do")
+	public String regster() {
+		
+		return null;
+	}
+}

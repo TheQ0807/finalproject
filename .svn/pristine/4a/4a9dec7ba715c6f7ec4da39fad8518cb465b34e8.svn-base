@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ese.mappers.manage.EmployeeMapper">
+	
+	<select id="getAllEmp" resultType="Employee">
+		select
+			employee_no				as no,
+			employee_password		as password,
+			employee_email			as email,
+			employee_salary			as salary,
+			employee_name			as name,
+			employee_phone			as phone,
+			employee_hiredate		as hiredate,
+			employee_work			as work,
+			center_id				as "center.id",
+			dept_id					as "department.id",
+			position_id				as "position.id"
+		from
+			sc_employee
+	</select>
+	
+	
+</mapper>

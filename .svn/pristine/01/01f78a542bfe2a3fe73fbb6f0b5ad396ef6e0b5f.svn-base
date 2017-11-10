@@ -1,0 +1,12 @@
+package com.ese.service.notice;
+
+import java.util.List;
+
+import com.ese.vo.notice.CustomerNotice;
+
+public interface CustomerNoticeService {
+
+	void addBoard(CustomerNotice customerNotice);
+	List<CustomerNotice> getAllBoards();
+	CustomerNotice getBoardByNo(int boardNo);
+}

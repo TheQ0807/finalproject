@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<typeAliases>
+		<typeAlias alias="Employee" type="com.ese.vo.hr.Employee"/>
+		<typeAlias alias="User" type="com.ese.vo.User"/>
+		<typeAlias alias="Category" type="com.ese.vo.Category"/>
+		<typeAlias alias="Division" type="com.ese.vo.Division"/>
+		<typeAlias alias="Part" type="com.ese.vo.part.Part"/>
+		<typeAlias alias="CustomerNotice" type="com.ese.vo.notice.CustomerNotice"/>
+		<typeAlias alias="EmployeeNotice" type="com.ese.vo.notice.EmployeeNotice"/>
+		<typeAlias alias="Center" type="com.ese.vo.afterservice.Center"/>
+		<typeAlias alias="City" type="com.ese.vo.afterservice.City"/>
+		<typeAlias alias="Locale" type="com.ese.vo.afterservice.Locale"/>
+	</typeAliases>
+
+	<typeHandlers>
+		<typeHandler handler="com.ese.common.mappers.typeHandler.CLOBHandler" javaType="String" jdbcType="LONGVARCHAR"/>
+	</typeHandlers>
+
+	<mappers>
+		<mapper resource="META-INF/mybatis/mappers/employee.xml" />
+		<mapper resource="META-INF/mybatis/mappers/engineer.xml" />
+		<mapper resource="META-INF/mybatis/mappers/user.xml" />
+		<mapper resource="META-INF/mybatis/mappers/manage/part/part.xml" />
+		<mapper resource="META-INF/mybatis/mappers/notice/customer/board.xml" />
+		<mapper resource="META-INF/mybatis/mappers/notice/employee/board.xml" />
+		<mapper resource="META-INF/mybatis/mappers/servicecenter/center.xml" />
+		<mapper resource="META-INF/mybatis/mappers/servicecenter/location.xml" />
+	</mappers>
+	
+</configuration>

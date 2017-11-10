@@ -1,0 +1,278 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert title here</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+ li {
+        list-style: none;
+        padding-bottom: 6px;
+    }
+    .imgs{
+        border:1px solid black;
+        display:none;
+    }
+    #threePalace{
+        width : 190px;
+        height : 80px;
+    }
+    .m1,.m2,.m3,.m4,.m5,.m6{
+        font-weight:bold;
+        color: black;
+        font-size: 17px;
+    }
+    .collapse{
+       
+    display: none;
+    
+    font-size: 16px;
+    color: #282828;
+    margin-bottom: 17px;
+    z-index: 999;
+    position: absolute;
+    
+        
+    }
+    #abc{
+        width: auto;
+        height: auto;
+
+    }
+    .collapse ul{
+        margin-top: 8px;
+
+    }
+
+    #m1{
+       height: 225px;
+        padding-left: 20px;
+      
+         
+    }
+    #m2{
+        height: 225px;
+        border-left: 1px solid black;
+        padding-left: 20px;
+     
+    }
+    #m3{
+ 
+           height: 225px;
+        border-left: 1px solid black;
+        padding-left: 20px;
+    }
+    #m4{
+   
+         height: 225px;
+        border-left: 1px solid black;
+        padding-left: 20px;
+    }
+    #m5{
+ 
+         height: 225px;
+        border-left: 1px solid black;
+        padding-left: 20px;
+        
+    }
+    #m6{
+     
+        height: 225px;
+        border-left: 1px solid black;
+        padding-left: 20px;
+    }
+    #e{
+        display: none;
+        width: 100%;
+        height: 370px;
+        background-color: white;
+        position: absolute;
+        z-index: 800;
+    }
+</style>
+<body>
+<div class="container">
+             <div class="gnb-inner-wrap">
+				<h1 class="ss-logo"><a href="#"><img src="../images/logo.jpg" id="threePalace"/>E.S 서비스센터</a></h1>
+				<div id="gnbArea" class="container-fluid">
+                  
+					 <ul class="nav nav-tabs nav-justified">
+					
+						<li><a href="#" class="m1" >빠른 해결지원</a>
+							<div class="collapse" id="div1">
+								<ul id="m1">
+									<li><a href="#">많이하는 질문</a></li>
+									<li><a href="#">자가진단</a></li>
+									<li><a href="#">동영상 가이드</a></li>
+									<li><a href="#">제품 가상체험하기</a></li>
+									<li><a href="#">다운로드</a></li>
+									<li><a href="#">이메일 상담</a></li>
+									<li><a href="#">채팅 상담</a></li>
+									<li><a href="#">원격 수리/지원</a></li>
+								</ul>
+							</div>
+						</li>
+						<li ><a href="#"class="m2" >서비스 신청/안내</a>
+							<div class="collapse">
+				            	<ul id="m2">
+									<li><a href="#">센터 찾기</a></li>
+									<li><a href="#">전화상담 예약</a></li>
+									<li><a href="#">센터방문 예약</a></li>
+									<li><a href="#">출장서비스 예약</a></li>
+									<li><a href="#">예약 조회/변경/취소</a></li>
+									<li><a href="#">서비스 요금안내</a></li>
+									<li><a href="#">제품 이전설치 안내</a></li>
+									<li><a href="#">유지보수/세척안내</a></li>
+								</ul>
+							</div>
+						</li>
+						<li ><a href="#" class="m3">고객의 소리</a>
+							<div class="collapse">
+								
+								<ul id="m3">
+									<li><a href="#">이용안내</a></li>
+									<li><a href="#">칭찬합니다</a></li>
+									<li><a href="#">불편합니다</a></li>
+								</ul>
+							</div>
+						</li>
+						<li ><a href="#"class="m4">회사소개</a>
+							<div class="collapse">					
+								<ul id="m4">
+									<li><a href="#">CEO인사말</a></li>
+									<li><a href="#">기업정보</a></li>
+									<li><a href="#">사회공헌 활동</a></li>
+									<li><a href="#">인재상</a></li>
+									<li><a href="#">윤리경영</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#" class="m5" >공지사항</a>
+							<div class="collapse">
+								
+								<ul id="m5">
+									<li><a href="#">공지사항</a></li>
+									<li><a href="#">서비스 뉴스</a></li>
+									<li><a href="#">이벤트</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#" target="svcShop" title="새창으로 열기" class="m6">부품&amp;소모품 구매</a>
+							<div class="collapse">
+							
+								<ul id="m6">
+									<li>
+										<a href="#" target="svcShop" title="새창으로 열기" id="phone">휴대폰</a>
+										<div id="phoneImg" class="imgs">
+										<a href="#" target="svcShop" title="새창으로 열기">
+										<img src="#"  alt="배터리, 충전기, 케이스, 이어폰, 거치대 등을 구매할 수 있습니다. 구매하러 가기"></a></div>
+									</li>
+									
+										
+										
+									<li>
+										<a href="#" target="svcShop" title="새창으로 열기" id="computer">컴퓨터/주변기기</a>
+										<div id="computerImg" class="imgs">
+										<a href="#" target="svcShop" title="새창으로 열기">
+										<img src="#" alt="토너, 잉크, 메모리, 어댑터, 헤드셋 등을 구매할 수 있습니다. 구매하러 가기"></a></div>
+									</li>
+									
+									<li>
+										<a href="#" target="svcShop" title="새창으로 열기" id="music">영상/음향기기</a>
+										<div id="musicImg" class="imgs">
+										<a href="#" target="svcShop" title="새창으로 열기">
+										<img src="#" alt="TV 리모콘, 영상케이블 등을 구매할 수 있습니다. 구매하러 가기"></a></div>
+									</li>
+									
+									<li>
+										<a href="#" target="svcShop" title="새창으로 열기" id="item">생활가전용품</a>
+										<div id="itemImg" class="imgs">
+										<a href="#" target="svcShop" title="새창으로 열기">
+										<img src="#" alt="냉장고 선반, 청소기 호스/필터, 에어컨, 선풍기 등의 소모품을 구매할 수 있습니다. 구매하러 가기"></a></div>
+									</li>
+									
+								</ul>
+							</div>
+							
+							
+						</li>
+                     </ul>
+               
+                 </div>
+			</div>
+        </div>
+			<div id="e"></div>
+			
+			<span id="abc">dfdfhkjasdhflkjsadhfkljsadhflkjasdhflkjsahflkjhsadlkfjhsadlkjfhsakfhkalsjhflkjsahfljsahdflj
+			asdfkljhsadkljfhsakljdfhkljashflksahfkljsahfkljashfkjlashflkjsadflkjsahdlfkjhsalfkjhsklfsljkfh
+			sadfhsakldfhklsadfkjlsadhfkjsadhkljashfkjsahfkjsahfkjsfkjlshfkjshkljfhsakjlfhsakljfhlksadhfksjadlf
+			asjkfhlkjsdhfklashfkjahsdkjfhsaklfhasklhfklajshfkljashflkashfklasflksfkjslkjfasldkfhsakldjfhskajhfkljshf
+			akjfhaslkfhkasashdfhaskfhalksflkasjfkljsfkjshfkljashfkjashkljsafkjlahfkjahsfkhaskljfsajkhltkndkhfkdthd
+			\ajkdsfkdtdkfhkdkdyfjkdkltkjdfskjtkjdytkljdkjfshtldhjkfdtjkhdjkjdtkjdhkfdkjshflsjfkjsfjdhsfkjsdufksdhkh</span>
+			
+    
+</body>
+<script type="text/javascript">
+$(function(){
+    $("#gnbArea").hover(function(){
+        $(".collapse").show();
+        $("#e").show();
+    },function(){       
+        $(".collapse").hide();
+        $("#computerImg").hide();
+        $("#itemImg").hide();
+        $("#musicImg").hide();
+        $("#shoppingImg").hide();
+        $("#phoneImg").hide();
+        $("#e").hide();
+    });
+    
+    $("#phone").mouseenter(function(){
+        $("#computerImg").hide();
+        $("#itemImg").hide();
+        $("#musicImg").hide();
+        $("#shoppingImg").hide();
+        $("#phoneImg").show();
+    })
+    
+    $("#computer").mouseenter(function(){
+        $("#phoneImg").hide();
+        $("#itemImg").hide();
+        $("#musicImg").hide();
+        $("#shoppingImg").hide();
+        $("#computerImg").show();
+    })
+    
+    $("#music").mouseenter(function(){
+        $("#computerImg").hide();
+        $("#phoneImg").hide();
+        $("#shoppingImg").hide();
+        $("#itemImg").hide();
+        $("#musicImg").show();
+    })
+    
+    $("#item").mouseenter(function(){
+        $("#musicImg").hide();
+        $("#computerImg").hide();
+        $("#phoneImg").hide();
+        $("#shoppingImg").hide();
+        $("#itemImg").show();
+    })
+    
+    $("#shopping").mouseenter(function(){
+        $("#itemImg").hide();
+        $("#musicImg").hide();
+        $("#computerImg").hide();
+        $("#phoneImg").hide();
+        $("#shoppingImg").show();
+    })
+
+})
+</script>
+</html>

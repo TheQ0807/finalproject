@@ -1,0 +1,27 @@
+package com.ese.service.servicecenter.reservation;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ese.mappers.servicecenter.CenterMapper;
+import com.ese.vo.afterservice.Center;
+
+@Service
+public class ReservationServiceImpl implements ReservationService {
+
+	@Autowired
+	CenterMapper centerMapper;
+	
+	@Override
+	public List<Center> getCenterList() {
+		return centerMapper.getCenterList();
+	}
+
+	@Override
+	public Center getCenter(String id) {
+		return centerMapper.getCenter(id);
+	}
+	
+}

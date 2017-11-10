@@ -1,0 +1,22 @@
+package com.ese.service.servicecenter;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ese.mappers.servicecenter.ServicecenterMapper;
+import com.ese.vo.User;
+@Service
+public class ServicecenterServiceImpl implements ServicecenterService {
+	
+	@Autowired
+	ServicecenterMapper serviceMapper;
+	
+	@Override
+	public void addNewUser(User user) {
+		int no = serviceMapper.getUserSeq();
+		System.out.println(no);
+		user.setNo(no);
+		
+		serviceMapper.addUser(user);
+	}
+}

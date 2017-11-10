@@ -1,0 +1,41 @@
+package com.ese.controller.servicecenter.user;
+
+
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ese.service.servicecenter.ServicecenterService;
+import com.ese.vo.User;
+import com.ese.vo.forms.Userform;
+
+@Controller
+public class SCUserController {
+	
+	@Autowired
+	ServicecenterService centerService;
+
+	@RequestMapping("/user/registe.do")
+	public String registe() {
+		
+		return "servicecenter/user/registe";
+	}
+	@RequestMapping("/user/login.do")
+	public String login() {
+		
+		return "servicecenter/user/login";
+	}
+	@RequestMapping("/user/add.do")
+	public String addUser(Userform userform)  {
+		System.out.println(userform);
+		User user = new User();
+		
+		BeanUtils.copyProperties(userform, user);
+		System.out.println(user);
+		centerService.addNewUser(user);
+		
+		return "redirect:/home.do";
+	}
+}

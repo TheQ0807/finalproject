@@ -1,0 +1,43 @@
+package com.ese.controller.manage.part;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.ese.service.manage.part.PartService;
+import com.ese.vo.Category;
+import com.ese.vo.Division;
+import com.ese.vo.part.Part;
+
+
+
+@Controller
+public class PartController {
+
+	@Autowired
+	PartService partService;
+	
+	@PostMapping("/Divs")
+	public List<Division> getDivisions(String categoryId){
+		return partService.getDivisions(categoryId);
+	}
+	
+	@PostMapping("/Parts")
+	public List<Part> getParts(@RequestParam("divisionId") String divisionId, @RequestParam("categoryId") String categoryId){
+		Category category = new Category();
+		Division division = new Division();
+		
+		category.setId(categoryId);
+		
+		division.setId(divisionId);
+		division.setCategory(category);
+		
+		List<Part> parts = partService.getSelectedParts(division);
+		
+		return parts;
+	}
+}

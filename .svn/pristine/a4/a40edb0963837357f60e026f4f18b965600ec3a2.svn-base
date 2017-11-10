@@ -1,0 +1,441 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="pragma" content="no-store" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="Expires" content="-1" />
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/resources/css/visit.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+.bg-primary {
+	height:60px;
+}
+.container {
+	width: "600px";
+}
+.reserve-dt {
+	border: 1px solid white;
+	border-radius: 5px;
+	background-color: #616161;
+	height:80px;
+	padding:10px;
+}
+.reserve-dt a{
+	font-size: 32px;
+	color: white;
+	text-decoration: none;
+}
+dl dd {
+	display: none;
+}
+dd ul li{
+	display: inline-block;
+	width: 150px;
+}
+.select {
+	background-color : #0BA8FF;
+	cursor: pointer;
+}
+.select-box {
+	background-color : #125ab8;
+}
+dt a {
+	user-select: none;
+}
+</style>
+</head>
+<body>
+	<%@ include file="../include/headNav.jsp"%>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<h1>센터방문 예약</h1>
+			</div>
+			<div class="col-sm-6 text-right">
+				<a href="#"><span class="glyphicon glyphicon-home"
+					aria-hidden="true"></span><span>홈</span></a> > <a href="#"><span>서비스
+						신청/안내</span></a> > <a href="#"><span>센터방문 예약</span></a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-2 text-center">
+				<span class="glyphicon glyphicon-info-sign text-info" aria-hidden="true"></span>
+				<span class="text-info">센터방문 전에 콜센터(1588-3366)로 전화주시면 제품별 전문상담사와 상담받으실 수 있습니다.</span>
+			</div>
+		</div>
+		<div class="row">
+		<form action="" method="post">
+			<input type="hidden" name="product-info" value=""/>
+			<input type="hidden" id="reservation" name="reservation" value=""/>
+		</form>
+		<dl>
+			<dt class="reserve-dt" id="reserve-product">
+				<a><strong>Step1</strong> <span class="glyphicon glyphicon-phone"></span> 제품 / 증상을 선택하세요</a>
+			</dt>
+			<dd>
+				<div>
+					<div class="inline-block text-center">
+						<img alt="컴퓨터" src="/resources/images/main/icon/computer.png">
+						<h4><strong>컴퓨터</strong></h4>
+					</div>
+					<div class="inline-block text-center">
+						<img alt="휴대전화" src="/resources/images/main/icon/phone.png">
+						<h4><strong>휴대기기</strong></h4>
+					</div>
+					<div class="inline-block text-center">
+						<img alt="가전제품" src="/resources/images/main/icon/Laundry.png">
+						<h4><strong>생활가전</strong></h4>
+					</div>
+					<div class="inline-block text-center">
+						<img alt="웨어러블기기" src="/resources/images/main/icon/watch.png">
+						<h4><strong>웨어러블 기기</strong></h4>
+					</div>
+				</div>
+				<ul class="" id="division">
+					<li><h4><a class="btn">sadfsdf</a></h4></li>
+					<li><h4><a class="btn">sadfsdf</a></h4></li>
+					<li><h4><a class="btn">sadfsdf</a></h4></li>
+					<li><h4><a class="btn">sadfsdf</a></h4></li>
+					<li><h4><a class="btn">sadfsdf</a></h4></li>
+					<li><h4><a class="btn">sadfsdf</a></h4></li>
+					<li><h4><a class="btn">sadfsdf</a></h4></li>
+				</ul>
+				<div>
+					<div class="inline-block-d"><h3><label class="control-label">선택한 제품</label></h3></div>
+					<div class="inline-block-d width100"> </div>
+					<div class="inline-block-d"><h4>생활가전</h4></div>
+				</div>
+				<div >
+					<div><h3><label class="control-label">고장 증상</label></h3></div>
+					<div>
+						<textarea rows="5" cols="138" name="symptom" placeholder="- 고장 증세를 자세하게 써주시면 더욱 빠른 서비스가 가능합니다."></textarea>
+					</div>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<dt class="reserve-dt" id="reserve-center">
+				<a><strong>Step2</strong> <span class="glyphicon glyphicon-map-marker"></span> 방문하실 센터를 선택하세요.</a>
+			</dt>
+			<dd>
+				<div>
+					<div id="map" style="width:50%;height:350px;"></div>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<dt class="reserve-dt" id="reserve-time">
+				<a><strong>Step3</strong> <span class="glyphicon glyphicon-calendar"></span> 예약일을 선택하세요.</a>
+			</dt>
+			<dd>
+				<div class="col-sm-5">
+					<div class="row bg-primary text-center">
+						<h2><span>예약날짜 선택</span></h2>
+					</div>
+					<div class='wrap' style="border-right:1px solid black">
+						<div class='btn-holder'>
+							<button id='btnPrev'>&lt;</button>
+							 <span id='currentDate'></span> 
+							<button id='btnNext'>&gt;</button>
+						</div>
+						<div id="calendar"></div>
+					</div>
+				</div>
+				<div class="col-sm-5">
+					<div class="row bg-primary text-center">
+						<h2><span>예약시간 선택</span></h2>
+					</div>
+					<div class="row" style="overflow:auto; height:327px;" >
+					<table class="table">
+						<thead>
+							<tr>
+								<th class="text-center" colspan="6">오전</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>09:00</td>
+								<td>09:10</td>
+								<td>09:20</td>
+								<td>09:30</td>
+								<td>09:40</td>
+								<td>09:50</td>
+							</tr>
+							<tr>
+								<td>10:00</td>
+								<td>10:10</td>
+								<td>10:20</td>
+								<td>10:30</td>
+								<td>10:40</td>
+								<td>10:50</td>
+							</tr>
+							<tr>
+								<td>11:00</td>
+								<td>11:10</td>
+								<td>11:20</td>
+								<td>11:30</td>
+								<td>11:40</td>
+								<td>11:50</td>
+							</tr>
+						</tbody>
+						<thead>
+							<tr>
+								<th class="text-center" colspan="6">오후</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>12:00</td>
+								<td>12:10</td>
+								<td>12:20</td>
+								<td>12:30</td>
+								<td>12:40</td>
+								<td>12:50</td>
+							</tr>
+							<tr>
+								<td>13:00</td>
+								<td>13:10</td>
+								<td>13:20</td>
+								<td>13:30</td>
+								<td>13:40</td>
+								<td>13:50</td>
+							</tr>
+							<tr>
+								<td>14:00</td>
+								<td>14:10</td>
+								<td>14:20</td>
+								<td>14:30</td>
+								<td>14:40</td>
+								<td>14:50</td>
+							</tr>
+							<tr>
+								<td>15:00</td>
+								<td>15:10</td>
+								<td>15:20</td>
+								<td>15:30</td>
+								<td>15:40</td>
+								<td>15:50</td>
+							</tr>
+							<tr>
+								<td>16:00</td>
+								<td>16:10</td>
+								<td>16:20</td>
+								<td>16:30</td>
+								<td>16:40</td>
+								<td>16:50</td>
+							</tr>
+							<tr>
+								<td>17:00</td>
+								<td>17:10</td>
+								<td>17:20</td>
+								<td>17:30</td>
+								<td>17:40</td>
+								<td>17:50</td>
+							</tr>
+						</tbody>
+					</table>
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<div class="row bg-primary text-center">
+						<h4><span>엔지니어 선택</span></h4>
+					</div>
+					<div>
+					<div class="row text-center">
+						<span>엔지니어 이름을 클릭하여 선택하세요.</span>
+						<img src="/resources/images/main/image/reserve_noimg.gif" width="80%">
+					</div>
+					<div class="row" style="height:110px;overflow: auto;">
+						<div class="col-sm-5 text-center">
+							<a class="btn">김형택</a>
+						</div>
+						<div class="col-sm-5 text-center">
+							<a class="btn">김형택</a>
+						</div>
+						<div class="col-sm-5 text-center">
+							<a class="btn">김형택</a>
+						</div>
+						<div class="col-sm-5 text-center">
+							<a class="btn">김형택</a>
+						</div>
+						<div class="col-sm-5 text-center">
+							<a class="btn">김형택</a>
+						</div>
+						<div class="col-sm-5 text-center">
+							<a class="btn">김형택</a>
+						</div>
+						<div class="col-sm-5 text-center">
+							<a class="btn">김형택</a>
+						</div>
+						<div class="col-sm-5 text-center">
+							<a class="btn">김형택</a>
+						</div>
+						<div class="col-sm-5 text-center">
+							<a class="btn">김형택</a>
+						</div>
+						<div class="col-sm-5 text-center">
+							<a class="btn">김형택</a>
+						</div>
+					</div>
+					</div>
+				</div>
+			</dd>
+		</dl>
+	</div>
+	</div>
+</body>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=78882296b3a732eec5d3099999dc082f"></script>
+<script type="text/javascript">
+	$(function() {
+		$(".reserve-dt").click(function(e) {
+			$(this).toggleClass("select-box");
+			console.log($(this));
+			$(this).next().toggle(300, function(e){
+				var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+			    mapOption = { 
+			        center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+			        level: 3 // 지도의 확대 레벨
+			    };
+
+				// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+				var map = new daum.maps.Map(mapContainer, mapOption); 
+			});
+		});
+		$(".inline-block").hover(function(e) {
+			$(this).toggleClass("select");
+		}, function() {
+			$(this).toggleClass("select");
+		});
+		$(".inline-block").click(function(e) {
+			$(this).addClass("select-box").siblings().removeClass("select-box");
+			$("#division").show(300);
+		})
+		$("#division").hide();
+		
+		var calendar = new controller(); 
+		calendar.init();
+
+		function controller(target) {
+
+			var that = this;   
+			var m_oMonth = new Date();
+			m_oMonth.setDate(1);
+
+			this.init = function() {
+				that.renderCalendar();
+				that.initEvent();
+			}
+
+		    /* 달력 UI 생성 */
+			this.renderCalendar = function() {
+				var arrTable = [];
+
+				arrTable.push('<table><colgroup>');
+				for(var i=0; i<7; i++) {
+					arrTable.push('<col width="100">');
+				}		
+				arrTable.push('</colgroup><thead><tr>');
+
+				var arrWeek = "일월화수목금토".split("");
+
+				for(var i=0, len=arrWeek.length; i<len; i++) {
+					var sClass = '';
+					sClass += i % 7 == 0 ? 'sun' : '';
+					sClass += i % 7 == 6 ? 'sat' : '';
+					arrTable.push('<td class="'+sClass+'">' + arrWeek[i] + '</td>');
+				}
+				arrTable.push('</tr></thead>');
+				arrTable.push('<tbody>');
+
+				var oStartDt = new Date(m_oMonth.getTime());
+		        // 1일에서 1일의 요일을 빼면 그 주 첫번째 날이 나온다.
+				oStartDt.setDate(oStartDt.getDate() - oStartDt.getDay());
+		        
+		        var now = new Date();
+		        var endDate = new Date();
+		        endDate.setDate(endDate.getDate()+7)
+		        
+				for(var i=0; i<100; i++) {
+					if(i % 7 == 0) {
+						arrTable.push('<tr>');
+					}
+
+					var sClass = 'date-cell '
+		            sClass += m_oMonth.getMonth() != oStartDt.getMonth() ? 'not-this-month ' : '';
+					sClass += i % 7 == 0 ? 'sun' : '';
+					sClass += i % 7 == 6 ? 'sat' : '';
+
+					
+					if(oStartDt >= now  && oStartDt < endDate && (sClass.search('sun') == -1 && sClass.search('sat') == -1)){
+						sClass += 'click';
+						console.log(sClass.search('sun'));
+					}
+					
+					arrTable.push('<td id="'+now.getFullYear()+'-'+(oStartDt.getMonth()+1)+'-'+oStartDt.getDate()+'" class="'+sClass+'">' + oStartDt.getDate() + '</td>');
+					oStartDt.setDate(oStartDt.getDate() + 1);
+
+					if(i % 7 == 6) {
+						arrTable.push('</tr>');
+						if(m_oMonth.getMonth() != oStartDt.getMonth()) {
+							break;
+						}
+					}
+				}
+				arrTable.push('</tbody></table>');
+
+				$('#calendar').html(arrTable.join(""));
+
+				that.changeMonth();
+			}
+
+		    /* Next, Prev 버튼 이벤트 */
+			this.initEvent = function() {
+				$('#btnPrev').click(that.onPrevCalendar);
+				$('#btnNext').click(that.onNextCalendar);
+			}
+
+		    /* 이전 달력 */
+			this.onPrevCalendar = function(e) {
+				m_oMonth.setMonth(m_oMonth.getMonth() - 1);
+				that.renderCalendar();
+			}
+
+		    /* 다음 달력 */
+			this.onNextCalendar = function(e) {
+				m_oMonth.setMonth(m_oMonth.getMonth() + 1);
+				that.renderCalendar();
+			}
+
+		    /* 달력 이동되면 상단에 현재 년 월 다시 표시 */
+			this.changeMonth = function() {
+				$('#currentDate').text(that.getYearMonth(m_oMonth).substr(0,9));
+			}
+
+		    /* 날짜 객체를 년 월 문자 형식으로 변환 */
+			this.getYearMonth = function(oDate) {
+				return oDate.getFullYear() + '년 ' + (oDate.getMonth() + 1) + '월';
+			}
+		}
+		$("#calendar").on("click", ".select", function() {
+			$(".clickselect").removeClass("clickselect");
+			$("#reservation").val($(this).prop("id"));
+			$(this).addClass("clickselect");
+		});
+		$("#calendar").on("mouseenter", ".click", function(e) {
+			$(this).toggleClass("select");
+			$(this).toggleClass("click");
+		})
+		$("#calendar").on("mouseleave", ".select", function() {
+			$(this).toggleClass("select");
+			$(this).toggleClass("click");
+		});
+	})
+</script>
+</html>

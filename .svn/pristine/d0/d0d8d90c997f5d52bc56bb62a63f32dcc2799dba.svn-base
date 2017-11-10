@@ -1,0 +1,32 @@
+package com.ese.service.manage;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ese.mappers.manage.EmployeeMapper;
+import com.ese.vo.afterservice.Center;
+import com.ese.vo.hr.Employee;
+
+@Service
+public class EmployeeServiceImpl implements EmployeeService {
+
+	@Autowired
+	EmployeeMapper employeeMapper;
+	
+	@Override
+	public List<Employee> getAllEmp() {
+		return employeeMapper.getAllEmp();
+	}
+	
+	@Override
+	public void addEmp(Employee employee) {
+		int seq = employeeMapper.getEmpSeq();
+		employee.setNo(seq);
+		Center center = employee.getCenter(); 
+		employeeMapper.addEmp(employee);
+	}
+	
+	
+}

@@ -1,0 +1,119 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <title>Document</title>
+<style>
+    
+    div.container {max-height: 1024px;}
+    
+</style>
+<script>
+   $(function(){
+    $("li a").click(function(){
+        $("li").removeClass("active");
+        $(this).closest("li").addClass("active");
+    });
+   });
+</script>
+</head>
+<body>
+    <div class="container">
+        <h3>신규 직원 등록</h3>
+        <div class="row">
+            <div class="col-sm-3 well">
+                <ul class="nav nav-pills nav-stacked text-center">
+                    <li class="active"><a href="#">물류</a></li>
+                    <li><a href="#">인사</a></li>
+                    <li><a href="#">운영</a></li>
+                    <li><a href="#">재무</a></li>
+                    <li><a href="#">서비스</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-8 well">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">이름</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="name" id="name" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">사진</label>
+                                <div class="addPic col-sm-10">
+                                    <input type="file" class="form-control" name="addPic" id="addPic" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">주소</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="adress" id="adress" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">전화번호</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="phone" id="phone" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">부서번호</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="deptNo" id="deptNo" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">직급</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="rank" id="rank" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">연봉</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="salary" id="salary"/>
+                                </div>
+                            </div>
+                            <div class="form-group text-right">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-primary" >완료</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="pic col-sm-3">
+                        <img src="#" class="img-thumbnail" alt="" width="200" height="236"> 
+                    </div>                    
+                </div>
+            </div>
+        </div>
+   </div>
+       <script type="text/javascript">
+    
+    $('#addPic').on('change', function() {
+        
+        ext = $(this).val().split('.').pop().toLowerCase(); //확장자
+        
+        //배열에 추출한 확장자가 존재하는지 체크
+        if($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
+            resetFormElement($(this)); //폼 초기화
+            window.alert('이미지 파일이 아닙니다! (gif, png, jpg, jpeg 만 업로드 가능)');
+        } else {
+            file = $('#addPic').prop("files")[0];
+            blobURL = window.URL.createObjectURL(file);
+            $('.img-thumbnail').attr('src', blobURL);
+            $('.img-thumbnail').slideDown(); //업로드한 이미지 미리보기 
+        }
+    });
+  
+    </script>
+</body>
+</html>

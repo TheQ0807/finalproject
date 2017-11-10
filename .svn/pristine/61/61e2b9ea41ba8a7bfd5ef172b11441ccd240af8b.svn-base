@@ -1,0 +1,13 @@
+package com.ese.controller.servicecenter;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public class ServiceCenterController {
+
+	@RequestMapping()
+	public String index() {
+		
+		return null;
+	}
+	
+}

@@ -1,0 +1,15 @@
+package com.ese.service.manage.part;
+
+import java.util.List;
+
+import com.ese.vo.Category;
+import com.ese.vo.Division;
+import com.ese.vo.part.Part;
+
+public interface PartService {
+
+	List<Part> getSelectedParts(Division division);
+	List<Division> getDivisions(String categoryId);
+	List<Category> getCategory();
+	Part getPartByNo(int partNo);
+}

@@ -1,0 +1,54 @@
+package com.ese.controller.manage.part;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ese.service.manage.part.PartService;
+import com.ese.vo.Category;
+import com.ese.vo.Division;
+import com.ese.vo.part.Part;
+
+
+@Controller
+public class PartWebController {
+
+	@Autowired
+	PartService partService;
+	
+	@RequestMapping("/partlist.do")
+	public String partlist(Model model) {
+		List<Category> categories = partService.getCategory();
+		
+		String divisionId = "0";
+		String categoryId = "0";
+		
+		List<Part> parts = partService.getSelectedParts(divisionId,categoryId);
+		
+		model.addAttribute("categories", categories);
+		model.addAttribute("parts", parts);
+		return "manage/part/partList";
+	}
+	
+	@RequestMapping("/partStock.do")
+	public String partStock(Model model) {
+		List<Category> categories = partService.getCategory();
+		
+		String divisionId = "0";
+		String categoryId = "0";
+		
+		List<Part> parts = partService.getSelectedParts(divisionId,categoryId);
+		
+		model.addAttribute("categories", categories);
+		model.addAttribute("parts", parts);
+		return "manage/part/partStock";
+	}
+	
+	@RequestMapping("/partAdd.do")
+	public String partAdd(){
+		return "manage/part/partAdd";
+	}
+}

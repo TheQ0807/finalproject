@@ -1,0 +1,39 @@
+package com.ese.controller.manage.part;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ese.service.manage.part.PartService;
+import com.ese.vo.Category;
+import com.ese.vo.Division;
+import com.ese.vo.part.Part;
+
+
+@Controller
+public class PartWebController {
+
+	@Autowired
+	PartService partService;
+	
+	@RequestMapping("/partlist.do")
+	public String home(Model model) {
+		List<Category> categories = partService.getCategory();
+		
+		Category category = new Category();
+		category.setId("0");
+		
+		Division division = new Division();
+		division.setId("0");
+		division.setCategory(category);
+		
+		List<Part> parts = partService.getSelectedParts(division);
+		
+		model.addAttribute("categories", categories);
+		model.addAttribute("parts", parts);
+		return "manage/part/partList";
+	}
+}

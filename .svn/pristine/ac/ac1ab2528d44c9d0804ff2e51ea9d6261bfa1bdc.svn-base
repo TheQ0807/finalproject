@@ -1,0 +1,185 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert title here</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+div.container {
+	max-height: 1024px;
+}
+img {
+	width: 100%;
+	max-width: 760px;
+	vertical-align: middle
+}
+#part-form-modal {
+	display: none;
+}
+</style>
+<script type="text/javascript">
+	$(function() {
+		$("input[name='categoryId']").change(function() {
+			var categoryId = $("input[name=categoryId]").val();
+			console.log(categoryId);
+			$.ajax({
+				type:"POST",
+				url:"scDivs",
+				contentType:"application/json",
+				data:{categoryId:categoryId},
+				dataType:"json",
+				success:function(scDivs){
+					var html="";
+					$.each(scDivs, function(index, division){
+						html += "<option value="+division.id+">"+division.name+"</option>"
+					})
+					$("input[name=divisionId]").append(html);
+				}
+				
+			})
+		})
+		$("input[name=divisionId]").change(function(e) {
+			var categoryId = $("input[name=categoryId]").val();
+			var divisionId = $("input[name=divisionId]").val();
+			e.preventDefault();
+			$.ajax({
+				type:"POST",
+				url:"scParts",
+				contentType:"application/json",
+				data:{categoryId:categoryId, divisionId:divisionId},
+				dataType:"json",
+				success:function(scParts){
+					var html="";
+					$.each(scParts, function(index, part){
+						html += "<tr>"
+						html += "<td>"+part.no+"</td>"
+						html += "<td>"+part.name+"</td>"
+						html += "<td>"+part.qty+"</td>"
+						html += "<td>"+part.cost+"</td>"
+						html += "<td>"+part.price+"</td>"
+						html += "</tr>"
+					})
+					$("#part-table tbody").remove();
+					$("#part-table tbody").html(html);
+				}
+				
+			})
+		})
+	})
+</script>
+<body>
+	<nav class="navbar navbar-static-top navbar-default">
+				<div class="container">
+					<div class="navbar-header ">
+						<a class="navbar-brand" href="#"><strong>물류</strong></a>
+					</div>
+					<ul class="nav navbar-nav">
+						<li class=""><a href="#"><strong>홈</strong></a></li>
+						<li class="dropdown active"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="#"><strong>물품 재고 현황</strong><span
+								class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">최근 변동 현황</a></li>
+								<li><a href="#">증가품목</a></li>
+								<li><a href="#">감소품목</a></li>
+							</ul></li>
+						<li><a href="#"><strong>물품 구입</strong></a></li>
+						<li><a href="#"><strong>전자 결재</strong></a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="">프로필 수정</a></li>
+						<li><a href=""><span class="glyphicon glyphicon-log-out">로그아웃</span></a></li>
+					</ul>
+				</div>
+			</nav>
+	<div class="container">
+		<div class="row">
+			
+			<form>
+				<div class="form-group col-sm-3">
+					<select class="form-control" name="categoryId">
+						<option value="0" selected="selected">선택하세요</option>
+						<c:forEach var="category" items="${categories}">
+							<option value="${category.id }">${category.name }</option>
+						</c:forEach>
+					</select>
+				</div>
+				<div class="form-group col-sm-3">
+					<select class="form-control" name="divisionId">
+						<option value="0" selected="selected">선택하세요</option>
+					</select>
+				</div>
+			</form>
+		</div>
+		<table class="table table-condenced" id="part-table">
+			<thead>
+				<tr>
+					<th>물품번호</th>
+					<th>물품명</th>
+					<th>재고수량</th>
+					<th>입고가</th>
+					<th>출고가</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="part" items="${parts}">
+					<tr>
+						<td>${part.no }</td>
+						<td><a href="${part.no }" data-toggle="modal" data-target="#part-form-modal">${part.name }</a></td>
+						<td>${part.qty }</td>
+						<td>${part.cost }</td>
+						<td>${part.price }</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
+	<div class="modal fade" id="part-form-modal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3>물품 구입</h3>
+				</div>
+				<form class="form-horizontal">
+					<div class="modal-body">
+						<div class="form-group">
+							<label>물품번호 : </label> <label>1</label>
+						</div>
+						<div class="form-group">
+							<label>제품명 : </label> <label>갤놋 빳데리</label>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-6" style="width: 100px; height: 100px">
+								<img alt="" src="/resources/img/a.jpg">
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label>재고 현황</label> <label>100</label>
+								</div>
+								<div class="form-group">
+									<label>변동 수량</label> <input type="text" />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default btn-sm"
+							data-dismiss="modal">닫기</button>
+						<button type="button" class="btn btn-primary btn-sm" id="btn-add">등록</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+package com.ese.service.manage.part;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ese.mappers.manage.part.PartMapper;
+import com.ese.vo.Category;
+import com.ese.vo.Division;
+import com.ese.vo.part.Part;
+
+
+@Service
+public class PartServiceImpl implements PartService{
+
+	@Autowired
+	PartMapper logisMapper;
+	
+	@Override
+	public List<Part> getSelectedParts(Division division) {
+		return logisMapper.getParts(division);
+	}
+	
+	@Override
+	public List<Division> getDivisions(String categoryId) {
+		return logisMapper.getDivisions(categoryId);
+	}
+	
+	@Override
+	public List<Category> getCategory() {
+		return logisMapper.getCategory();
+	}
+}

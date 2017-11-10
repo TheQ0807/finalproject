@@ -1,0 +1,13 @@
+package com.ese.service.servicecenter.reservation;
+
+import java.util.List;
+
+import com.ese.vo.afterservice.Center;
+
+public interface ReservationService {
+
+	List<Center> getCenterList();
+	Center getCenter(String id);
+	List<Center> getCenterListByLocale(String locale, String city);
+	
+}

@@ -1,0 +1,14 @@
+package com.ese.mappers.notice;
+
+import java.util.List;
+
+import com.ese.vo.forms.BoardForm;
+import com.ese.vo.notice.CustomerNotice;
+
+public interface CustomerNoticeMapper {
+	
+	void addBoard(CustomerNotice customerNotice);
+	List<CustomerNotice> getAllBoards();
+	CustomerNotice getBoardByNo(int boardNo);
+	void updateBoard(CustomerNotice customerNotice);
+}

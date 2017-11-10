@@ -1,0 +1,8 @@
+package com.ese.service.manage;
+
+import com.ese.vo.hr.Employee;
+
+public interface EmployeeService {
+
+	Employee getAllEmp();
+}

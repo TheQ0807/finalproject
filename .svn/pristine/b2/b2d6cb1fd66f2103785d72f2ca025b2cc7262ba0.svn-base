@@ -1,0 +1,36 @@
+package com.ese.controller.notice;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ese.service.notice.CustomerNoticeService;
+import com.ese.vo.forms.BoardForm;
+import com.ese.vo.notice.CustomerNotice;
+
+@Controller
+@RequestMapping("/notice")
+public class CustomNoticeController {
+	
+	@Autowired
+	CustomerNoticeService customerNoticeService;
+	
+	@RequestMapping("/add.do")
+	public String addBoard(BoardForm boardForm) {
+		CustomerNotice customerNotice = new CustomerNotice();
+		BeanUtils.copyProperties(boardForm, customerNotice);
+		customerNoticeService.addBoard(customerNotice);
+		return "redirect:list.do";
+	}
+	@RequestMapping("/addform.do")
+	public String form() {
+		return "/manage/notice/addform";
+	}
+	@RequestMapping("/list.do")
+	public String list(Model model) {
+		model.addAttribute("boards", customerNoticeService.getAllBoards());
+		return "/manage/notice/list";
+	}
+}

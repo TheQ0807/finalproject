@@ -1,0 +1,29 @@
+package com.ese.service.notice;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ese.mappers.notice.CustomerNoticeMapper;
+import com.ese.vo.notice.CustomerNotice;
+
+@Service
+public class CustomerNoticeServiceImpl implements CustomerNoticeService {
+	
+	@Autowired
+	CustomerNoticeMapper customerNoticeMapper;
+	
+	public void addBoard(CustomerNotice customerNotice) {
+		customerNoticeMapper.addBoard(customerNotice);
+	}
+	public List<CustomerNotice> getAllBoards() {
+		return customerNoticeMapper.getAllBoards();
+	}
+	public CustomerNotice getBoardByNo(int boardNo) {
+		int count = customerNoticeMapper.getBoardByNo(boardNo).getCount();
+		customerNoticeMapper.getBoardByNo(boardNo).setCount(count+1);
+		
+		return customerNoticeMapper.getBoardByNo(boardNo);
+	}
+}

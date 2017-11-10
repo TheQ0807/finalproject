@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<typeAliases>
+		<typeAlias alias="Employee" type="com.ese.vo.hr.Employee"/>
+	</typeAliases>
+
+	<typeHandlers>
+		<typeHandler handler="com.ese.common.mappers.typeHandler.CLOBHandler" javaType="String" jdbcType="LONGVARCHAR"/>
+	</typeHandlers>
+
+	<mappers>
+		<mapper resource="META-INF/mybatis/mappers/employee.xml" />
+	</mappers>
+	
+</configuration>
