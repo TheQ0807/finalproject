@@ -1,0 +1,21 @@
+package com.ese.mappers.manage.part;
+
+import java.util.List;
+
+import com.ese.vo.Division;
+import com.ese.vo.common.PartCriteria;
+import com.ese.vo.part.Part;
+
+
+
+public interface PartMapper {
+
+	List<Part> getParts(Division division);
+	Part getPartByNo(int partNo);
+	void updatePart(Part part);
+	List<Part> getAllParts();
+	void addPart(Part part);
+	int getPartSeq();
+	int getTotalRows(PartCriteria criteria);
+	List<Part> getPagingParts(PartCriteria criteria);
+}

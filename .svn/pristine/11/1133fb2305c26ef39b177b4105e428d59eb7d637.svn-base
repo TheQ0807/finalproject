@@ -1,0 +1,340 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@include file="../../commons/jstl.jsp" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js'></script>
+		<link rel='stylesheet' href='../resources/fullcalendar/fullcalendar.css' />
+	<script src='../resources/fullcalendar/fullcalendar.js'></script>
+<style type='text/css'>
+	body {
+		text-align: center;
+		font-size: 14px;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		}
+
+	#calendar {
+		width: 900px;
+		margin: 0 auto;
+		}
+</style>
+</head>
+
+<body>
+	 
+    <c:set var="menu" value="mypage" />
+    <c:set var="innermenu" value="vacation" />
+	<%@include file="../engnavi/pagenavi.jsp" %>
+    
+    	<div class="col-sm-9 col-sm-offset-1 col-md-10 col-md-offset-1 main">
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-sm-12" id="blank"></div>
+    			</div>
+    			<div class="row">
+	    			<div class="col-sm-10">
+		    			<div id="calendar"></div>
+	    			</div>
+	    			<div class="col-sm-2">
+		    			<div class="panel panel-default">
+		    				<div class="panel-heading">사용자 목록</div>
+							<ul class="list-group" id="member-list">
+								<c:forEach var="engineer" items="${engineers }">
+									<c:choose>
+										<c:when test="${engineer.no ne loginEngineer.no }">
+										<li class="list-group-item" id="engineer-no-${engineer.no }">${engineer.name }</li>
+										</c:when>
+									</c:choose>
+							    </c:forEach>
+							</ul>
+							<div class="panel-footer text-center">
+								<a href="/engineer/mypage.do" class="btn btn-primary">모든 일정보기</a>
+							</div>
+		    			</div>
+	    	  		</div>
+    	  		</div>
+    	  	</div>
+    	</div>
+    	<div class="modal fade" id="event-form-modal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+	  		<div class="modal-dialog" role="document">
+	    		<div class="modal-content">
+	      			<div class="modal-header">
+	        			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        			<h4 class="modal-title" id="gridSystemModalLabel">휴가 신청 작성</h4>
+	      			</div>
+	      			<div class="modal-body">
+	      				<form class="form-horizontal well">
+	  						<div class="form-group">
+	    						<label for="description" class="col-sm-2 control-label">사유</label>
+	    						<div class="col-sm-10">
+	      							<textarea rows="3" class="form-control" id="event-description" name="description" placeholder="내용을 입력하세요" ></textarea>
+	    						</div>
+	  						</div>
+	  						<div class="form-group">
+	    						<label for="start-date" class="col-sm-2 control-label">시작 일시</label>
+	    						<div class="col-sm-4">
+	      							<input type="date" class="form-control" id="event-start-date" name="startDate" >
+	    						</div>
+	    						<div class="col-sm-2">
+	      							<input type="number" class="form-control" id="event-start-hour" name="startHour"  min="0" max="23" step="1">
+	    						</div>
+	    						<label for="start-hour" class="col-sm-1 control-label">시</label>
+	    						<div class="col-sm-2">
+	      							<input type="number" class="form-control" id="event-start-minute" name="startMinute"  min="00" max="50" step="10">
+	    						</div>
+	    						<label for="start-minute" class="col-sm-1 control-label">분</label>
+	  						</div>
+	  						<div class="form-group">
+	    						<label for="end-date" class="col-sm-2 control-label">종료 일시</label>
+	    						<div class="col-sm-4">
+	      							<input type="date" class="form-control" id="event-end-date" name="endDate" >
+	    						</div>
+	    						<div class="col-sm-2">
+	      							<input type="number" class="form-control" id="event-end-hour" name="endHour" min="0" max="23" step="1">
+	    						</div>
+	    						<label for="end-hour" class="col-sm-1 control-label">시</label>
+	    						<div class="col-sm-2">
+	      							<input type="number" class="form-control" id="event-end-minute" name="endMinute" min="00" max="50" step="10" >
+	    						</div>
+	    						<label for="end-minute" class="col-sm-1 control-label">분</label>
+	  						</div>
+	  						<div class="form-group">
+	    						<label for="title" class="col-sm-2 control-label">하루 종일</label>
+	    						<div class="col-sm-1">
+	    							<input type="checkbox" class="form-control" id="event-all-day" name="allDay">
+	    						</div>
+	  						</div>
+	  						<!-- <div class="form-group">
+	    						<label for="title" class="col-sm-2 control-label">신청서 경로</label>
+	    						<div class="col-sm-4 text-right">
+	    							<input type="file" class="form-control" id="event-url-image" name="betchfile">
+	    						</div>
+	  						</div> -->
+						</form>
+	      			</div>
+	      			<div class="modal-footer">
+	        			<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+	        			<button type="button" class="btn btn-primary" id="add-event-btn">등록</button>
+	      			</div>
+	    		</div>
+	  		</div>
+		</div>
+		
+		<div id="breakDetail" class="modal fade" role="dialog" tabindex="-1">
+		  <div class="modal-dialog" role="document">
+		
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">휴가 신청서</h4>
+		      </div>
+		      <div class="modal-body well">
+		      	<table class="table table-hover">
+		      		<tr>
+		      			<th>번호</th><td></td>
+		      		</tr>
+		      		<tr>
+		      			<th>신청일</th><td></td>
+		      		</tr>
+		      		<tr>
+		      			<th>시작일</th><td></td>
+		      		</tr>
+		      		<tr>
+		      			<th>종료일</th><td></td>
+		      		</tr>
+		      		<tr>
+		      			<th>휴가 사유</th><td colspan="3"></td>
+		      		</tr>
+		      		<tr>
+		      			<th>휴가 신청서</th><td></td>
+		      		</tr>
+		      	</table>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" id="breakDetail-close" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" id="breakDetail-delete" class="btn btn-primary">삭제</button>
+		        <button type="button" id="breakDetail-update" class="btn btn-primary">수정</button>
+		      </div>
+		    </div>
+		
+		  </div>
+		</div>
+		
+	
+		<!-- 경고메세지 출력용 작은 모달창 -->
+		<div id="small-modal" class="modal bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+	 			<div class="modal-dialog modal-sm" role="document">
+				<div class="modal-content">
+			      	<div class="modal-header">
+			        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        	<h4 class="modal-title" id="small-modal-title"></h4>
+			      	</div>
+			      	<div class="modal-body" id="small-modal-body"></div>
+				</div>
+		  	</div>
+		</div>
+    </div>
+</body>
+<script type="text/javascript">
+$(function() {
+	
+	function timeToString(time) {
+		return moment(new Date(time)).format("YYYY-MM-DD");
+	}	
+	
+	function showSmallModal(title, message) {
+		$('#small-modal-title').text(title);
+		$("#small-modal-body").html("<small>" + message + "</small>");
+		$('#small-modal').modal('show');
+	}
+	
+	function initializeDetail() {
+		$('#breakDetail table tr:first-child td').text("");
+		$('#breakDetail table tr:nth-child(2) td').text("");
+		$('#breakDetail table tr:nth-child(3) td:first').text("");
+		$('#breakDetail table tr:nth-child(4) td:last').text("");
+		$('#breakDetail table tr:nth-child(5) td').text("");
+		$('#breakDetail table tr:last-child td').text("");
+	}
+	
+	function initializeForm(date) {
+		var yyyymmdd = date.format();
+		var now = new Date();
+		var hour = now.getHours();
+		
+		$("#event-form-modal #event-description").val("");
+		$("#event-form-modal #event-start-date").val(yyyymmdd);
+		$("#event-form-modal #event-end-date").val(yyyymmdd);
+		$("#event-form-modal #event-start-hour").val(hour);
+		$("#event-form-modal #event-start-minute").val("00");
+		$("#event-form-modal #event-end-hour").val(parseInt(hour)+1);
+		$("#event-form-modal #event-end-minute").val("00");		
+		/* $("#event-form-modal #event-url-image").val(""); */		
+	}
+	
+	function createEventData() {
+		var eventData = {};
+		eventData["reason"] = $("#event-description").val();
+		eventData["startdate"] = $('#event-start-date').val();
+		eventData["startHour"] = $('#event-start-hour').val();
+		eventData["startMinute"] = $('#event-start-minute').val();
+		if (!$("#event-all-day").prop("checked")) {
+			eventData["enddate"] = $('#event-end-date').val();
+			eventData["endHour"] = $('#event-end-hour').val();
+			eventData["endMinute"] = $('#event-end-minute').val();
+		}
+		eventData["allDay"] = $("#event-all-day").prop("checked");
+		/* eventData["fetchFile"] = $('#event-url-image').val(); */
+		
+		return eventData;
+	}
+	
+	$("#add-event-btn").click(function() {
+		$.ajax({
+			type:'post',
+			url:'add-plan.do',
+			dataType:'json',
+			data:createEventData(),	
+			success:function(data) {
+				$("#event-form-modal").modal("hide");
+				// 캘린더를 갱신한다.
+				$("#calendar").fullCalendar('refetchEvents');
+			}
+		});
+	});
+	
+	
+	$('#calendar').fullCalendar({
+		events:function(start, end, timezone, callback) {
+			var paramData = {start:start.format(), end:end.format()};
+			var requestUrl = "all-plan.do";
+			
+			if ($("#member-list li.active").length) {
+				var clickedEngineer = $("#member-list li.active").attr("id").replace("engineer-no-", "");
+				paramData['empNo'] = clickedEngineer;
+				requestUrl = "other-plan.do";
+			} 
+			
+			$.ajax ({
+				url:requestUrl,
+				data:paramData,
+				dataType:"json",
+				success:function(data) {
+					
+					var events = [];
+					$.each(data, function(index, item) {
+						var eventObj = {};
+						eventObj.id = item.no;
+						eventObj.title = item.reason;
+						eventObj.start = item.startdate
+						eventObj.end = item.enddate
+						
+						events.push(eventObj);
+					});
+					
+					callback(events);
+					
+				}, error:function () {
+					alert("오류 발생");
+				}
+			});
+		},
+		dayClick: function(date, jsEvent, view) {
+			if ($("#member-list li.active").length == 0) {
+				$("#event-form-modal").modal("show");
+			} else {
+				showSmallModal("오류", "다른 사용자의 일정을 보고 있는 중에는 일정을 등록할 수 없습니다.");
+			}
+			
+		}, eventClick: function(event, jsEvent, view) {
+			
+			initializeDetail();
+			
+			var breakNo = event.id;
+			
+			$.ajax ({
+				url:"detail-plan.do",
+				data:{breakNo:breakNo},
+				dataType:"json",
+				success:function(data) {
+					$('#breakDetail').modal('show');
+					$('#breakDetail table tr:first-child td').text(data.no);
+					$('#breakDetail table tr:nth-child(2) td').text(timeToString(data.apply));
+					$('#breakDetail table tr:nth-child(3) td:first').text(timeToString(data.startdate));
+					$('#breakDetail table tr:nth-child(4) td:last').text(timeToString(data.enddate));
+					$('#breakDetail table tr:nth-child(5) td').text(data.reason);
+					$('#breakDetail table tr:last-child td').text(data.fetchFile);
+				},  error:function () {
+					alert("오류 발생");
+				}
+			}) 
+		}
+	});
+	
+	$('breakDetail-delete').click(function () {
+		$('#breakDetail table tr:first-child td').val()
+	})
+	
+	$('breakDetail-update').click(function () {
+		$('#breakDetail table tr:first-child td')
+	})
+	
+	$('#breakDetail-close').click(function () {
+		$('#breakDetail').modal('hide');
+	})
+	
+	$("#member-list li").click(function() {
+		$(this).addClass("active").siblings().removeClass("active");
+		$("#calendar").fullCalendar('refetchEvents');
+	});
+});
+</script>
+</html>

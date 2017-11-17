@@ -1,0 +1,23 @@
+package com.ese.vo.common;
+
+import java.util.Date;
+
+public class ServiceCriteria {
+	private Date reservation;
+	private Integer engineerNo;
+	
+	public Date getReservation() {
+		return reservation;
+	}
+	public void setReservation(Date reservation) {
+		this.reservation = reservation;
+	}
+	public Integer getEngineerNo() {
+		return engineerNo;
+	}
+	public void setEngineerNo(Integer engineerNo) {
+		this.engineerNo = engineerNo;
+	}
+	
+	
+}

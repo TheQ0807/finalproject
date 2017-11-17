@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ese.mappers.engineer.EngineerMapper">
+	
+	<select id="getEmployeeById" parameterType="String" resultType="Employee">
+		select
+			employee_no				as	no, 
+			employee_password		as	password, 
+			employee_email			as	email, 
+			employee_salary			as salary, 
+			employee_name			as	name,
+			employee_phone			as	 phone, 
+			employee_hiredate		as hiredate, 
+			employee_work			as	work, 
+			center_id				as "center.id", 
+			dept_id					as	"department.id", 
+			position_id				as	"position.id"
+		from
+			sc_employee
+		where 
+			employee_email = #{value}
+	</select>
+	
+	<select id="getAllEngineers" parameterType="String" resultType="Employee">
+		select
+			employee_no				as	no, 
+			employee_password		as	password, 
+			employee_email			as	email, 
+			employee_salary			as salary, 
+			employee_name			as	name,
+			employee_phone			as	 phone, 
+			employee_hiredate		as hiredate, 
+			employee_work			as	work, 
+			center_id				as "center.id", 
+			dept_id					as	"department.id", 
+			position_id				as	"position.id"
+		from
+			sc_employee 
+		where 
+			dept_id = 'DEPT-SC'
+	</select>
+	
+	<!-- 달력 -->
+	<select id="getAllEngiBreak" parameterType="Break" resultType="Break">
+		select 
+			break_no			as no, 
+			break_apply			as	apply,
+			break_startdate		as	startdate,
+			break_enddate		as	enddate,
+			employee_no			as	"employee.no",
+			break_reason		as	reason,
+			break_fetchFile		as	fetchFile
+		from 
+			sc_break
+		where
+			break_startdate >= #{startdate}
+		and 
+			break_enddate &lt;= #{enddate}
+	</select>
+	
+	<select id="getEngiBreakByEmpNoDetail" parameterType="int" resultType="Break">
+		select 
+			break_no			as no, 
+			break_apply			as	apply,
+			break_startdate		as	startdate,
+			break_enddate		as	enddate,
+			employee_no			as	"employee.no",
+			break_reason		as	reason,
+			break_fetchFile		as	fetchFile
+		from 
+			sc_break
+		where 
+			employee_no = #{value}
+	</select>
+	
+	<select id="getEngiBreakByNoDetail" parameterType="int" resultType="Break">
+		select 
+			break_no			as no, 
+			break_apply			as	apply,
+			break_startdate		as	startdate,
+			break_enddate		as	enddate,
+			employee_no			as	"employee.no",
+			break_reason		as	reason,
+			break_fetchFile		as	fetchFile
+		from 
+			sc_break
+		where 
+			break_no = #{value}
+	</select>
+	
+	<select id="getEngiBreakForEmpNoMonth" parameterType="Break" resultType="Break">
+		select 
+			break_no			as no, 
+			break_apply			as	apply,
+			break_startdate		as	startdate,
+			break_enddate		as	enddate,
+			employee_no			as	"employee.no",
+			break_reason		as	reason,
+			break_fetchFile		as	fetchFile
+		from 
+			sc_break
+		where 
+			employee_no = #{employee.no}
+		and 
+			break_startdate >= #{startdate}
+		and 
+			break_enddate &lt;= #{enddate}
+	</select>
+	
+	<insert id="addEngiBreak" parameterType="Break">
+		insert into sc_break
+		(break_no, break_startdate, break_enddate, employee_no, break_reason, break_fetchFile)
+		values
+		(#{no}, #{startdate}, #{enddate}, #{employee.no}, #{reason}, #{fetchFile})
+	</insert>
+	
+	<select id="getBreakSeq" resultType="int">
+		select
+			seq_break.nextval
+		from 
+			dual
+	</select>
+	
+	<update id="modifyBreakByNo" parameterType="Break">
+		update sc_break
+		set 
+			break_startdate = #{value},
+			break_enddate = #{value},
+			break_apply = sysdate,
+			break_contents = #{value}
+		where 
+			break_no = #{value}
+			
+	</update>
+	
+	<delete id="deleteEngiBreakByNo" parameterType="int">
+		delete from sc_break
+		where break_no = #{value}
+	</delete>
+	
+</mapper>

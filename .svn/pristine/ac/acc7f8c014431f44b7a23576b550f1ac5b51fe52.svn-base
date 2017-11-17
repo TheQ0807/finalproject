@@ -1,0 +1,119 @@
+package com.ese.service.manage.part;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.ese.mappers.manage.part.CategoryMapper;
+import com.ese.mappers.manage.part.DivisionMapper;
+import com.ese.mappers.manage.part.InventoryChangeMapper;
+import com.ese.mappers.manage.part.PartMapper;
+import com.ese.mappers.manage.part.StatusMapper;
+import com.ese.vo.Category;
+import com.ese.vo.Division;
+import com.ese.vo.part.InventoryChange;
+import com.ese.vo.part.Part;
+import com.ese.vo.part.PartStatus;
+
+
+@Service
+public class PartServiceImpl implements PartService{
+
+	@Autowired
+	PartMapper partMapper;
+	
+	@Autowired
+	CategoryMapper categoryMapper;
+	
+	@Autowired
+	DivisionMapper divisionMapper;
+	
+	@Autowired
+	StatusMapper statusMapper;
+	
+	@Autowired
+	InventoryChangeMapper inventoryChangeMapper;
+	
+	@Override
+	public List<Part> getSelectedParts(String categoryId) {
+		Category category = new Category();
+		Division division = new Division();
+		category.setId(categoryId);
+		division.setId("0");
+		division.setCategory(category);
+		return partMapper.getParts(division);
+	}
+	
+	@Override
+	public List<Part> getSelectedParts(String divisionId, String categoryId) {
+		Category category = new Category();
+		Division division = new Division();
+		
+		category.setId(categoryId);
+		
+		division.setId(divisionId);
+		division.setCategory(category);
+		return partMapper.getParts(division);
+	}
+	
+	@Override
+	public List<Division> getDivisions(String categoryId) {
+		return divisionMapper.getDivisions(categoryId);
+	}
+	
+	@Override
+	public List<Category> getCategory() {
+		return categoryMapper.getCategory();
+	}
+	
+	@Override
+	public Part getPartByNo(int partNo) {
+		
+		return partMapper.getPartByNo(partNo);
+	}
+	
+	@Override
+	public void updatePart(int partNo, int increasePart) {
+		Part part =  partMapper.getPartByNo(partNo);
+		InventoryChange change = new InventoryChange();
+		change.setPart(part);
+		change.setQty(increasePart);
+		int totalQty = part.getQty()+increasePart;
+		part.setQty(totalQty);
+		inventoryChangeMapper.changeInventory(change);
+		partMapper.updatePart(part);
+	}
+	
+	@Override
+	public List<Part> getAllParts() {
+		return partMapper.getAllParts();
+	}
+	
+	@Override
+	public void addPart(Part part) {
+		int seq = partMapper.getPartSeq();
+		part.setNo(seq);	
+		partMapper.addPart(part);
+	}
+	
+	@Override
+	public List<PartStatus> getAllStatus() {
+		return statusMapper.getAllStatus();
+	}
+	
+	@Override
+	public Part modifyPartByNo(int partNo) {
+		Part part = partMapper.getPartByNo(partNo);
+		String divId = part.getDivision().getId();
+		Division division = divisionMapper.getDivisionById(divId);
+		part.setDivision(division);
+		return part;
+	}
+	
+	@Override
+	public void updatePart(Part part) {
+		partMapper.updatePart(part);
+	}
+}

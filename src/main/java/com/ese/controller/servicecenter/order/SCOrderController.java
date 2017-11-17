@@ -1,0 +1,58 @@
+package com.ese.controller.servicecenter.order;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+import com.ese.vo.User;
+import com.ese.vo.forms.PurchaseForm;
+import com.ese.vo.order.Order;
+import com.ese.vo.part.Part;
+
+@Controller
+public class SCOrderController {
+	
+	@RequestMapping("/order/detail.do")
+	public String main() {
+		return "servicecenter/order/detail";
+	}
+	
+	@RequestMapping("/order/purchase.do")
+	public String purchase() {
+		return "servicecenter/order/purchase";
+	}
+	
+	@RequestMapping("/order/addOrder.do")
+	public String addOrder(PurchaseForm purchaseForm) {
+		System.out.println(purchaseForm);
+		
+		Order order = new Order();
+		
+		BeanUtils.copyProperties(purchaseForm, order);
+		
+		Part part = new Part();
+		User user = new User();
+		
+		part.setNo(purchaseForm.getPartNo());
+		
+		user.setNo(purchaseForm.getBuyerNo());
+		
+		String addr1 = purchaseForm.getAddress1();
+		String addr2 = purchaseForm.getAddress2();
+		String realAddr = addr1+", "+addr2;
+		
+		order.setAddress(realAddr);
+		order.setPart(part);
+		order.setUser(user);
+		
+		System.out.println(order);
+		
+		return "servicecenter/order/pay";
+	}
+	
+	@RequestMapping("/order/pay.do")
+	public String pay() {
+		return "servicecenter/order/pay";
+	}
+}

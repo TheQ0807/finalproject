@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.ese.mappers.notice.SuggestBoardMapper">
+	<select id="getAllBoards" resultType="Suggest">
+		select
+			suggest_no				as no,
+			suggest_title			as title,
+			suggest_contents		as contents,
+			suggest_parentno		as parentNo,
+			suggest_createdate		as createdate,
+			employee_no				as "employee.no"
+		from
+			suggest_board
+	</select>
+	<insert id="addBoard" parameterType="Suggest">
+		insert into suggest_board
+			(suggest_no, suggest_title, suggest_contents, suggest_parentno, suggest_createdate, employee_no)
+		values
+			(#{no}, #{title}, #{contents}, #{parentNo}, #{createdate}, #{employee.no})
+	</insert>
+	
+	<select id="getSeq" resultType="int">
+		select seq_suggest.nextval from dual
+	</select>
+</mapper>

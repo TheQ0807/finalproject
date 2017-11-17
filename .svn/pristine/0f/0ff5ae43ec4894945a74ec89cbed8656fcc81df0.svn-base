@@ -1,0 +1,14 @@
+package com.ese.service.engineer.serviceresult;
+
+import java.util.List;
+
+import com.ese.vo.Division;
+import com.ese.vo.afterservice.RepairInfo;
+import com.ese.vo.part.Part;
+
+public interface ServiceResultService {
+
+	void serviceComplete(Integer serviceNo);
+	List<RepairInfo> getAllRepairInfo();
+	List<Part> getPartsByDivision(Division division);
+}

@@ -1,0 +1,158 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@include file="../../commons/jstl.jsp" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+.container {width:1024px;}
+</style>
+</head>
+<body>
+    <c:set var="menu" value="service" />
+    <c:set var="innermenu" value="reserve" />
+	<%@include file="../engnavi/servicenavi.jsp" %>
+	<div class="container">
+		<h1>예약 현황</h1>
+		<hr/>
+		<div class="row">
+			<div class="col-sm-12" id="blank"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="col-sm-12">
+		 			<div id="select" class="col-sm-12">
+		 				<div class="col-sm-12" id="list">
+			  				<div class="row">
+			  					<div class="list-group" id="reserve-list">
+			  						 
+			  					</div>
+			  				</div>
+			  				<div class="row text-center">
+				  				<ul class="pagination" id="page">
+				  				</ul>
+			  				</div>
+		 				</div>
+		 			</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+					<div class="row">
+					<div class="col-sm-12" id="result">
+	 				<table class="table table-bordered" id="reserve-detail">
+	 					<tr><th>고객명</th></tr>
+	 					<tr><td id="name"></td></tr>
+	 					<tr><th>고객 전화번호</th></tr>
+	 					<tr><td id="phone"></td></tr>
+	 					<tr><th>고장 제품 종류</th></tr>
+	 					<tr><td id="division"></td></tr>
+	 					<tr><th>고장 증세</th></tr>
+	 					<tr><td id="symptom"></td></tr>
+	 					<tr><th>완료여부</th></tr>
+	 					<tr><td id="status"></td></tr>
+	 					<tr><td><button id="btn" data-no="" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">완료</button></td></tr>
+	 				</table>
+					</div>
+				</div>
+	  		</div>
+	 		</div>
+	 	</div>
+	 </div>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+	
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Modal Header</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label>수리형태</label>
+					<select class="form-control">
+						<option>aaa</option>
+						<option>aaa</option>
+						<option>aaa</option>
+						<option>aaa</option>
+					</select>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+$(function() {
+	function getReserve(pageNo){
+		$.ajax({
+			type:"get",
+			url: "/engineer/reserve/getReserve.do",
+			data: {pageNo:pageNo},
+			dataType: "json",
+			success: function(result) {
+				console.log(result);
+				var htmlContents = "";
+				$.each(result.serviceList, function(index, reserve) {
+					var date = new Date(reserve.reservation);
+					console.log(date);
+					var reservation = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate() + "  " + ((date.getHours() == 9)?"09":date.getHours()) + "시" + ((date.getMinutes() == 0)?"00":"30") + "분";
+					htmlContents += '<a class="list-group-item" href="'+reserve.no+'">'+reservation+'<span class="label label-primary pull-right">'+reserve.serviceStatus.status+'</span></a>';
+				});
+				var pageHtml = "";
+				if(pageNo > 1) {
+					pageHtml = "<li><a href='"+(pageNo - 1)+"'>prev</a></li>";
+				}
+				for(var i = result.criteria.beginPage; i <= result.criteria.endPage; ++i) {
+					pageHtml += "<li><a href='"+i+"'>"+i+"</a></li>"
+				}
+				if(result.criteria.totalBlocks > pageNo) {
+					pageHtml = "<li><a href='"+(pageNo + 1)+"'>next</a></li>";
+				}
+				$("#reserve-list").html(htmlContents);
+				$("#page").html(pageHtml);
+			}
+		})
+	}
+	$("#page").on("click", "a", function(e){
+		e.preventDefault();
+		getReserve($(this).attr("href"))
+	});
+	$("#reserve-list").on("click", "a", function(e) {
+		e.preventDefault();
+		var reserveNo = $(this).attr("href");
+		
+		$.ajax({
+			type:"get",
+			url: "/engineer/reserve/getAfterService.do",
+			data: {reserveNo:reserveNo},
+			dataType:"json",
+			success: function(result) {
+				$("#btn").hide();
+				$("#name").text(result.user.name);
+				$("#phone").text(result.user.phone);
+				$("#division").text(result.division.name);
+				$("#symptom").text(result.symptom)
+				$("#status").text(result.serviceStatus.status)
+				if(result.serviceStatus.id == "STA_STANDBY"){
+					$("#btn").show();
+					$("#btn").attr("data-no", result.no)
+				}
+			}
+		});
+	});
+	$("#btn").hide();
+	getReserve(1);
+})
+</script>
+</html>

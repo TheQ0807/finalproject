@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ese.mappers.engineer.EngineerMapper">
+	
+	<select id="getEmployeeById" parameterType="String" resultType="Employee">
+		select
+			employee_no				as	no, 
+			employee_password		as	password, 
+			employee_email			as	email, 
+			employee_salary			as salary, 
+			employee_name			as	name,
+			employee_phone			as	 phone, 
+			employee_hiredate		as hiredate, 
+			employee_work			as	work, 
+			center_id				as "center.id", 
+			dept_id					as	"department.id", 
+			position_id				as	"position.id"
+		from
+			sc_employee
+		where 
+			employee_email = #{value}
+	</select>
+	
+	<select id="getEngineerByNo" parameterType="Employee" resultType="Employee">
+		select
+			employee_no				as	no, 
+			employee_password		as	password, 
+			employee_email			as	email, 
+			employee_salary			as salary, 
+			employee_name			as	name,
+			employee_phone			as	 phone, 
+			employee_hiredate		as hiredate, 
+			employee_work			as	work, 
+			center_id				as "center.id", 
+			dept_id					as	"department.id", 
+			position_id				as	"position.id"
+		from
+			sc_employee 
+		where 
+			employee_no = #{no}
+	</select>
+	
+	<update id="updateEngineer" parameterType="Employee">
+		update sc_employee
+		<set>
+			<if test="password != null">employee_password = #{password},</if>
+			<if test="email != null">employee_email = #{email},</if>
+			<if test="phone != null">employee_phone = #{phone},</if>
+		</set>
+		where 
+			employee_no = #{no}
+	</update>
+	
+	<!-- 달력 -->
+	<select id="getAllEngiBreak" parameterType="Break" resultType="Break">
+		select 
+			A.break_no				as no, 
+			A.break_apply			as	apply,
+			A.break_startdate		as	startdate,
+			A.break_enddate			as	enddate,
+			A.employee_no			as	"employee.no",
+			A.break_reason			as	reason,
+			A.break_fetchFile		as	fetchFile,
+			B.employee_name			as	"employee.name",
+			B.center_id				as	"employee.center.id",
+			A.break_completed		as	completed
+		from 
+			sc_break A, sc_employee B, sc_center C
+		where 
+			A.employee_no = B.employee_no
+		and
+			B.center_id = C.center_id
+		and 
+			A.break_no in (select distinct break_no from break_sign where sign_status != '반려')
+		and
+			C.center_id = #{employee.center.id}
+		and
+			A.break_startdate >= #{startdate}
+		and 
+			A.break_enddate &lt;= #{enddate}
+	</select>
+	
+	<select id="getEngiBreakForExit" parameterType="int" resultType="Break">
+		select 
+			A.break_no				as no, 
+			A.break_apply			as	apply,
+			A.break_startdate		as	startdate,
+			A.break_enddate			as	enddate,
+			A.employee_no			as	"employee.no",
+			A.break_reason			as	reason,
+			A.break_fetchFile		as	fetchFile,
+			B.employee_name			as	"employee.name",
+			A.break_completed		as	completed
+		from 
+			sc_break A, sc_employee B
+		where 
+			A.employee_no = B.employee_no
+		and 
+			A.break_no in (select distinct break_no from break_sign where sign_status = '반려')
+		and
+			A.employee_no = #{value}
+		and 
+			A.break_startdate >= sysdate - 7
+	</select>
+	
+	<select id="getEngiBreakByEmpNoDetail" parameterType="Break" resultType="Break">
+		select 
+			A.break_no				as no, 
+			A.break_apply			as	apply,
+			A.break_startdate		as	startdate,
+			A.break_enddate			as	enddate,
+			A.employee_no			as	"employee.no",
+			A.break_reason			as	reason,
+			A.break_fetchFile		as	fetchFile,
+			B.employee_name			as	"employee.name",
+			A.break_completed		as	completed
+		from 
+			sc_break A, sc_employee B
+		where 
+			A.employee_no = B.employee_no
+		and
+			A.employee_no = #{employee.no}
+		and 
+			A.break_no in (select distinct break_no from break_sign where sign_status = '반려')
+		and
+			A.break_startdate >= sysdate - 7
+		and 
+			A.break_enddate &lt;= #{enddate}
+	</select>
+	
+	<select id="getEngiBreakByNoDetail" parameterType="int" resultType="Break">
+		select 
+			A.break_no				as no, 
+			A.break_apply			as	apply,
+			A.break_startdate		as	startdate,
+			A.break_enddate			as	enddate,
+			A.employee_no			as	"employee.no",
+			A.break_reason			as	reason,
+			A.break_fetchFile		as	fetchFile,
+			B.employee_name			as	"employee.name",
+			A.break_completed		as	completed
+		from 
+			sc_break A, sc_employee B
+		where 
+			A.employee_no = B.employee_no
+		and
+			break_no = #{value}
+	</select>
+	
+	<insert id="addEngiBreak" parameterType="Break">
+		insert into sc_break
+		(break_no, break_startdate, break_enddate, employee_no, break_reason, break_fetchFile)
+		values
+		(#{no}, #{startdate}, #{enddate}, #{employee.no}, #{reason}, #{fetchFile})
+	</insert>
+	
+	<select id="getBreakSeq" resultType="int">
+		select
+			seq_break.nextval
+		from 
+			dual
+	</select>
+	
+	<update id="modifyBreakByNo" parameterType="Break">
+		update sc_break
+		<set>
+			<if test="startdate != null">break_startdate = #{startdate},</if>
+			<if test="enddate != null">break_enddate = #{enddate},</if>
+			<if test="apply != null">break_apply = #{apply},</if>
+			<if test="reason != null">break_reason = #{reason},</if>
+			<if test="completed != null">break_completed = #{completed}</if>
+		</set>
+		where 
+			break_no = #{no}
+	</update>
+	
+	<!-- 휴가 사인 -->
+	<insert id="newBreakSign" parameterType="BreakSign">
+		insert into break_sign
+		(sign_rank, sign_status, break_no, employee_no)
+		values
+		(#{rank}, #{status}, #{breaks.no}, #{employee.no})
+	</insert>
+	<select id="standByCheck" parameterType="int" resultType="int">
+		select
+			count(*)
+		from 
+			break_sign 
+		where
+			break_no = #{value}
+		and
+			sign_status = '완료'
+	</select>
+	<select id="getBreakSign" parameterType="int" resultType="BreakSign">
+		select 
+			sign_rank		as rank,
+			sign_status		as status,
+			break_no		as "breaks.no",
+			employee_no		as	"employee.no",
+			sign_reason		as	reason
+		from
+			break_sign
+		where 
+			break_no = #{value}
+		and
+			sign_status = '반려' 
+	</select>
+	
+</mapper>

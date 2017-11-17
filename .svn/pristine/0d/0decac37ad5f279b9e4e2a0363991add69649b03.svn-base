@@ -1,0 +1,32 @@
+package com.ese.mappers.engineer;
+
+import java.util.List;
+
+import com.ese.vo.hr.Break;
+import com.ese.vo.hr.BreakSign;
+import com.ese.vo.hr.Employee;
+
+public interface EngineerMapper {
+	
+	Employee getEmployeeById(String email);
+	
+	//달력
+	int getBreakSeq();
+	List<Break> getAllEngiBreak(Break break1);
+	List<Break> getEngiBreakByEmpNoDetail(Break break1);
+	void addEngiBreak(Break break1);
+	void modifyBreakByNo(Break break1);
+	List<Employee> getAllEngineers();
+	Break getEngiBreakByNoDetail(int no);
+	List<Break> getEngiBreakForExit(int no);
+	void updateEngineer(Employee employee);
+	
+	//휴가 신청 결재 대기
+	void newBreakSign(BreakSign breakSign);
+	int standByCheck(int breakNo);
+	List<BreakSign> getBreakSign(int no);
+	
+	// 센터장 
+	List<Employee> getEmployeeForCenterId(String centerId);
+	List<Employee> getForDetpIdAndCenterId(Employee employee);
+}

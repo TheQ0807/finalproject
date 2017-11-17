@@ -1,0 +1,13 @@
+package com.ese.controller.servicecenter.order;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class SCOrderController {
+
+	@RequestMapping("/order/detail.do")
+	public String main() {
+		return "servicecenter/order/detail";
+	}
+}

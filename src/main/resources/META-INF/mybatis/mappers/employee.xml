@@ -97,8 +97,13 @@
       	 A.center_id = C.center_id
       and
       	 A.position_id = D.position_id 
-      and
-      	 A.employee_name = #{value}
+      	 <if test="value != ''">
+			<choose>
+				<when test="value != ''">
+					and A.employee_name like '%' || #{value} || '%'
+				</when>
+			</choose>
+		</if>
    </select>
    
    <select id="getAllCenter" resultType="Center">
@@ -117,6 +122,8 @@
 			A.employee_name         as name,
 			A.employee_phone		as phone,
 			A.employee_work			as work,
+			A.employee_email		as email,
+			A.employee_hiredate		as hiredate,
 			A.center_id				as "center.id",
 			A.dept_id				as "dept_id",
 			A.employee_pic_path		as pic,
@@ -138,5 +145,115 @@
 			A.employee_work	= 'Y'
 	</select>
 
+	<select id="getByDeptHoilday" parameterType="string" resultType="Employee">
+		select
+			A.employee_no            as no,
+	         A.employee_password      as password,
+	         A.employee_email         as email,
+	         A.employee_salary         as salary,
+	         A.employee_name         as name,
+	         A.employee_phone         as phone,
+	         A.employee_hiredate      as hiredate,
+	         A.employee_work         as work,
+	         A.center_id			 as "center.id",
+	         A.dept_id				 as	"dept_id",
+	         A.employee_pic_path	 as pic,
+	         A.position_id			 as "position.id", 
+	         C.center_name            as "center.name",
+	         B.dept_name               as "department.name",
+	         D.position_name            as "position.name"
+	      from
+	         sc_employee A , sc_department B, sc_center C, sc_position D, sc_break E
+	      where
+	      	 A.dept_id = B.dept_id
+	      and
+	      	 A.center_id = C.center_id
+	      and
+	      	 A.position_id = D.position_id 
+	      and
+	      	 A.employee_no = E.employee_no
+	      and
+	      	A.dept_id = #{value}
+	      and
+	      	E.break_completed = 'Y'
+	      and
+	      	E.break_enddate > sysdate
+			
+	</select>
+	
+	<select id="getAllDeptHoilday" resultType="Employee">
+		select
+			A.employee_no            as no,
+	         A.employee_password      as password,
+	         A.employee_email         as email,
+	         A.employee_salary         as salary,
+	         A.employee_name         as name,
+	         A.employee_phone         as phone,
+	         A.employee_hiredate      as hiredate,
+	         A.employee_work         as work,
+	         A.center_id			 as "center.id",
+	         A.dept_id				 as	"dept_id",
+	         A.employee_pic_path	 as pic,
+	         A.position_id			 as "position.id", 
+	         C.center_name            as "center.name",
+	         B.dept_name               as "department.name",
+	         D.position_name            as "position.name"
+	      from
+	         sc_employee A , sc_department B, sc_center C, sc_position D, sc_break E
+	      where
+	      	 A.dept_id = B.dept_id
+	      and
+	      	 A.center_id = C.center_id
+	      and
+	      	 A.position_id = D.position_id 
+	      and
+	      	 A.employee_no = E.employee_no
+	      and
+	      	E.break_completed = 'Y'
+	      and
+	      	E.break_enddate > sysdate
+			
+	</select>
+	
+	<select id="findKeyword" parameterType="string" resultType="Employee">
+		select
+			A.employee_no            as no,
+	         A.employee_password      as password,
+	         A.employee_email         as email,
+	         A.employee_salary         as salary,
+	         A.employee_name         as name,
+	         A.employee_phone         as phone,
+	         A.employee_hiredate      as hiredate,
+	         A.employee_work         as work,
+	         A.center_id			 as "center.id",
+	         A.dept_id				 as	"dept_id",
+	         A.employee_pic_path	 as pic,
+	         A.position_id			 as "position.id", 
+	         C.center_name            as "center.name",
+	         B.dept_name               as "department.name",
+	         D.position_name            as "position.name"
+	      from
+	         sc_employee A , sc_department B, sc_center C, sc_position D, sc_break E
+	      where
+	      	 A.dept_id = B.dept_id
+	      and
+	      	 A.center_id = C.center_id
+	      and
+	      	 A.position_id = D.position_id 
+	      and
+	      	 A.employee_no = E.employee_no
+	      and
+	      	E.break_completed = 'Y'
+	      and
+	      	E.break_enddate > sysdate
+	      <if test="value != ''">
+			<choose>
+				<when test="value != ''">
+					and A.employee_name like '%' || #{value} || '%'
+				</when>
+			</choose>
+		</if>
+			
+	</select>
 	
 </mapper>

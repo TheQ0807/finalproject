@@ -1,0 +1,38 @@
+package com.ese.controller.engineer.mypage;
+
+import java.util.Date;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ese.service.engineer.EngineerService;
+import com.ese.vo.hr.Employee;
+@Controller
+public class EngineerPageController {
+	
+	@Autowired
+	EngineerService engineerService;
+	
+	@RequestMapping("/engineer/mypage.do")
+	public String mypage (Model model, HttpSession session) {
+		
+		Employee engineer = (Employee) session.getAttribute("loginEngineer");
+		if(engineer == null) {
+			throw new RuntimeException("로그인이 필요합니다");
+		}
+		
+		model.addAttribute("engineers", engineerService.getEngineers());
+		
+		return "engineer/mypage/mypage";
+	}
+	
+	@RequestMapping("/engineer/myinfo.do")
+	public String myinfo () {
+		return "engineer/mypage/myinfo";
+	}
+
+}

@@ -1,0 +1,95 @@
+package com.ese.controller.engineer.mypage;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.ese.service.engineer.EngineerService;
+import com.ese.vo.forms.BreakForm;
+import com.ese.vo.hr.Break;
+import com.ese.vo.hr.Employee;
+
+@Controller
+public class EngineerPageAjaxController {
+	
+	@Autowired
+	private EngineerService engineerService;
+	
+	@InitBinder
+	public void stringToDateBinding(WebDataBinder binder) {
+		SimpleDateFormat dataFormat = new SimpleDateFormat("yyyy-MM-dd");
+		
+		binder.registerCustomEditor(Date.class, new CustomDateEditor(dataFormat, true));
+	}
+	
+	@RequestMapping("/engineer/all-plan.do")
+	@ResponseBody
+	public List<Break> getAllBreak (Date start, Date end, HttpSession session) {
+		Employee engineer = (Employee) session.getAttribute("loginEngineer");
+		if(engineer == null) {
+			throw new RuntimeException("로그인이 필요합니다");
+		}
+		Break break1 = new Break();
+		break1.setStartdate(start);
+		break1.setEnddate(end);
+		List<Break> breaks = engineerService.getAllEngineerBreak(break1);
+		
+		return breaks;
+	}
+	
+	@RequestMapping("/engineer/other-plan.do")
+	@ResponseBody
+	public List<Break> getOtherEvent(String empNo, Date start, Date end) {
+		System.out.println("come");
+		
+		Break break1 = new Break();
+		Employee emp = new Employee();
+		emp.setNo(Integer.parseInt(empNo));
+		break1.setEmployee(emp);
+		break1.setStartdate(start);
+		break1.setEnddate(end);
+		
+		List<Break> breaks = engineerService.getBreakForEmpMonth(break1);
+		
+		return breaks;
+	}
+	
+	@RequestMapping("/engineer/add-plan.do")
+	@ResponseBody
+	public Break addNewBreak(BreakForm breakForm, HttpSession session) {
+		
+		Employee engineer = (Employee) session.getAttribute("loginEngineer");
+		if(engineer == null) {
+			throw new RuntimeException("로그인이 필요합니다");
+		}
+		Break break1 = new Break();
+		break1.setStartdate(breakForm.getStart());
+		break1.setEnddate(breakForm.getEnd());
+		break1.setReason(breakForm.getReason());
+		break1.setEmployee(engineer);
+		break1.setFetchFile("heloo.hwp");
+		
+		return engineerService.NewEngBreak(break1);
+	}
+	
+	@RequestMapping("/engineer/detail-plan.do")
+	@ResponseBody
+	public Break getBreakForEngineer (int breakNo, HttpSession session) {
+		System.out.println("HI");
+		System.out.println(breakNo);		
+		Break break1 = engineerService.getEngiBreakDetail(breakNo);
+		System.out.println(break1);
+		
+		return break1;
+	}
+}

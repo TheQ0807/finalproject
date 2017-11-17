@@ -1,0 +1,33 @@
+package com.ese.controller.engineer.cm;
+
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ese.service.engineer.EngineerService;
+import com.ese.vo.hr.Employee;
+
+@Controller
+public class CenterMasterController {
+	
+	@Autowired
+	EngineerService engineerService;
+	
+	@RequestMapping("/engineer/emplist.do")
+	public String emplist (Model model, HttpSession session) {
+		
+		Employee chief = (Employee)session.getAttribute("loginEngineer");
+		System.out.println("장"+chief.getCenter().getId());
+		List<Employee> emplist = engineerService.getEmployeeToCenterId(chief.getCenter().getId());
+		model.addAttribute("AllEmployees", emplist);
+		System.out.println("왔나");
+		System.out.println(emplist);
+		
+		return "engineer/chief/emplist";
+	}
+}

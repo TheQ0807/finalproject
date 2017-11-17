@@ -1,0 +1,174 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@include file="../../commons/jstl.jsp" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	 
+    <c:set var="menu" value="engMain" />
+    <c:set var="innermenu" value="recommend" />
+	<%@include file="../engnavi/mainnavi.jsp" %>
+    
+    	<div class="col-sm-9 col-sm-offset-1 col-md-10 col-md-offset-1 main">
+    		<h1>DashBoard</h1>
+    		<hr>
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-sm-12" id="blank"></div>
+    			</div>
+    			<div class="row">
+	    			<div class="col-sm-6">
+		    			<div class="col-sm-11">
+		    			<div id="select" class="col-sm-12">
+		    				<div class="col-sm-12" id="list">
+			    				<table class="table table-condensed">
+								<colgroup>
+									<col width="10%">
+									<col width="60%">
+									<col width="30%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>번호</th>
+										<th>제목</th>
+										<th>등록일</th>
+									</tr>
+								</thead>
+								<tbody>
+								<c:if test="${empty boards }">
+									<tr>
+										<td colspan="5" class="text-center">검색된 결과가 없습니다.</td>
+									</tr>
+								</c:if>
+									<c:forEach var="board" items="${boards }">
+										<c:url var="detailURL" value="detail.do">
+											<c:param name="no" value="${board.no }"/>
+										</c:url>
+										<tr>
+											<td>${board.no }</td>
+											<td><a href="${detailURL }"><c:out value="${board.title}"/></td>
+											<td><fmt:formatDate value="${board.createdate }" pattern="yyyy-MM-dd"/></td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+			    				<div class="text-right">
+			    					<a href="" class="btn btn-primary btn-sm" id="btn-new-suggestion" data-toggle="modal" data-target="#adj-form-modal">건의하기</a>
+		    					</div>
+		    					<div class="modal fade" id="adj-form-modal" role="dialog">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title">건의하기</h4>
+											</div>
+											<form>
+												<input type="hidden" name="no">
+												<div class="modal-body">
+													<div class="form-group">
+														<label>건의제목</label>
+														<input type="text" class="form-control" name="title">
+													</div>
+													<div class="form-group">
+														<label>건의 내용</label>
+														<textarea rows="3" class="form-control" name="contents"></textarea>
+													</div>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">닫기</button>
+													<button type="button" class="btn btn-primary btn-sm" id="btn-add-suggestion">완료</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+		    				</div>
+		    			</div>
+		    			</div>
+	    			</div>
+	    			<div class="col-sm-6">
+		    				<div class="row">
+		    				<div class="col-sm-12" id="result">
+			    				<table class="table table-hover">
+			    					<thead>
+			    						<tr>
+			    							<th>no</th>
+			    							<th>title</th>
+			    							<th>dates</th>    							
+			    						</tr>
+			    					</thead>
+			    					<tbody>
+			    						<tr>
+			    							<td>1</td>
+			    							<td>연습</td>
+			    							<td>11.1.1</td>
+			    						</tr>
+			    						<tr>
+			    							<td>2</td>
+			    							<td>연습</td>
+			    							<td>11.1.1</td>
+			    						</tr>
+			    					</tbody>
+			    				</table>
+		    				</div>
+	    				</div>
+	    	  		</div>
+    	  		</div>
+    	  	</div>
+    	</div>
+    </div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		$("#btn-new-suggestion").click(function(){
+			$(":input[name=title]").val("제목을 입력하시오.");
+			$(":input[name=contents]").val("내용을 입력하시오.");
+		})
+		
+		$("#btn-add-suggestion").click(function(event) {
+			event.preventDefault();
+			
+			var todo = {
+				title: $(":input[name=title]").val(),
+				dates: $(":input[name=dates]").val(),
+				description: $(":input[name=description]").val()
+			};
+			
+			$.ajax({
+				type:"POST",
+				url:"suggestion",
+				contentType:"application/json",		// 서버로 보내는 요청데이터의 타입
+				data: JSON.stringify(todo),			// 데이터를 json 표기법의 텍스트로 보낸다.
+				dataType: "json",					// 서버로부터 받는 응답데이터의 타입
+				success:function(todo) {
+					var html = "<tr>";
+					html += "<td>"+todo.no+"</td>";
+					html += "<td>"+todo.title+"</td>";
+					html += "<td>"+todo.dates+"</td>";
+					html += "<td>"
+					html += "<button class='btn btn-warning btn-xs' id='btn-modify-todo-"+todo.no+"'>수정</button>";
+					html += "<button class='btn btn-danger btn-xs' id='btn-del-todo-"+todo.no+"'>삭제</button>";
+					html += "</td>";
+					html += "</tr>";
+					
+					$("#todo-table tbody").append(html);
+				},
+				complete:function() {
+					$(":input[name=title]").val("");
+					$(":input[name=dates]").val("");
+					$(":input[name=description]").val("");
+					$("#todo-form-modal").modal("hide");
+				}
+			});
+		});
+	})
+</script>
+</html>

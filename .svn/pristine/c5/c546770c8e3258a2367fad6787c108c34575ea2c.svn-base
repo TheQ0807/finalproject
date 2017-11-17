@@ -1,0 +1,22 @@
+package com.ese.service.engineer;
+
+
+import java.util.List;
+
+import com.ese.vo.hr.Break;
+import com.ese.vo.hr.Employee;
+
+public interface EngineerService {
+	
+	Employee getEmployeeDetailById(String email);
+	
+	//달력
+	List<Break> getAllEngineerBreak(Break break1);
+	Break getBreakForEmpDetail(int no);
+	List<Break> getBreakForEmpMonth(Break break1);
+	Break NewEngBreak(Break break1);
+	Break modifyBreak(Break break1);
+	Break deleteEngiBreak(int no);
+	List<Employee> getEngineers();
+	Break getEngiBreakDetail(int no);
+}

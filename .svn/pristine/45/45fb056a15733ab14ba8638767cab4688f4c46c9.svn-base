@@ -1,0 +1,64 @@
+package com.ese.controller.engineer.service;
+
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.ese.service.engineer.EngineerService;
+import com.ese.service.engineer.reserve.ReserveService;
+import com.ese.vo.afterservice.AfterService;
+import com.ese.vo.common.ServiceCriteria;
+import com.ese.vo.common.ServiceEngineerResult;
+import com.ese.vo.hr.Employee;
+
+@Controller
+@RequestMapping("/engineer")
+public class EngineerServiceController {
+	
+	@Autowired
+	EngineerService engineerService;
+	@Autowired
+	ReserveService reserveService;
+	
+	@RequestMapping("/reserve.do")
+	public String reserve (Model model) {
+		return "engineer/servicemanage/servicemanage";
+	}
+	
+	@RequestMapping("/reserve/getReserve.do")
+	@ResponseBody
+	public ServiceEngineerResult getReserve(Integer pageNo, HttpSession session) {
+		ServiceCriteria criteria = new ServiceCriteria();
+		
+		Employee engineer = (Employee)session.getAttribute("loginEngineer");
+		criteria.setEngineerNo(engineer.getNo());
+		if(pageNo != null) {
+			criteria.setPageNo(pageNo);
+		}
+		ServiceEngineerResult result = new ServiceEngineerResult();
+		result.setCriteria(criteria);
+		result.setServiceList(reserveService.getMyService(criteria));
+		return result;
+	}
+	@RequestMapping("/reserve/getAfterService.do")
+	@ResponseBody
+	public AfterService getAfterService(Integer reserveNo) {
+		return reserveService.getDetailService(reserveNo);
+	}
+	
+	@RequestMapping("/stock.do")
+	public String stock () {
+		return "engineer/servicemanage/stock";
+	}
+	
+	@RequestMapping("/visit.do")
+	public String visit () {
+		return "engineer/servicemanage/visit";
+	}
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ese.mappers.manage.pay.PayChangeMapper">
+	
+	<insert id="addPayChange" parameterType="PayChange">
+		insert into pay_change
+		(pay_no, pay_money, pay_type, pay_changedate, pay_etc_reason, change_type_id)
+		values
+		(seq_pay.nextval, #{money}, #{type}, sysdate, #{reason, jdbcType=VARCHAR}, #{changeType.id})
+	</insert>
+	
+	<select id="getPayChanges" parameterType="PayChangeType" resultType="PayChange">
+		select
+			PC.pay_no				as "no"
+			, PC.pay_money			as "money"
+			, PC.pay_type			as "type"
+			, PC.pay_changedate		as "changedate"
+			, PC.pay_etc_reason		as "reason"
+			, PC.change_type_id		as "changeType.id"
+			, CT.change_type_info	as "changeType.info"
+		from
+			pay_change PC, pay_change_type CT
+		where
+			PC.change_type_id = CT.change_type_id
+		<if test="id != null">
+			AND	PC.change_type_id = #{id}
+		</if>
+	</select>
+	
+	<select id="getAllPayChangeType" resultType="PayChangeType">
+		select
+			change_type_id		as "id"
+			, change_type_info	as "info"
+		from
+			pay_change_type
+		order by change_type_id
+	</select>
+</mapper>

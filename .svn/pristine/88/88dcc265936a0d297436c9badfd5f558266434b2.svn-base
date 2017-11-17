@@ -1,0 +1,68 @@
+package com.ese.service.engineer;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ese.mappers.engineer.EngineerMapper;
+import com.ese.vo.hr.Break;
+import com.ese.vo.hr.Employee;
+
+@Service
+public class EngineerServiceImpl implements EngineerService {
+	
+	@Autowired
+	EngineerMapper engineerMapper;
+	
+	@Override
+	public Employee getEmployeeDetailById(String email) {
+		return engineerMapper.getEmployeeById(email);
+	}
+	
+	@Override
+	public Break getBreakForEmpDetail(int no) {
+		return engineerMapper.getEngiBreakByEmpNoDetail(no);
+	}
+	
+	@Override
+	public List<Break> getAllEngineerBreak(Break break1) {
+		return engineerMapper.getAllEngiBreak(break1);
+	}
+	
+	@Override
+	public Break deleteEngiBreak(int no) {
+		Break break1 = engineerMapper.getEngiBreakByEmpNoDetail(no);
+		engineerMapper.deleteEngiBreakByNo(no);
+		
+		return break1;
+	}
+	
+	@Override
+	public Break modifyBreak(Break break1) {
+		engineerMapper.modifyBreakByNo(break1);
+		return engineerMapper.getEngiBreakByEmpNoDetail(break1.getEmployee().getNo());
+	}
+	
+	@Override
+	public Break NewEngBreak(Break break1) {
+		int seq = engineerMapper.getBreakSeq();
+		break1.setNo(seq);
+		engineerMapper.addEngiBreak(break1);
+		
+		return break1;
+	}
+	@Override
+	public Break getEngiBreakDetail(int no) {
+		return engineerMapper.getEngiBreakByNoDetail(no);
+	}
+	@Override
+	public List<Break> getBreakForEmpMonth(Break break1) {
+		return engineerMapper.getEngiBreakForEmpNoMonth(break1);
+	}
+	
+	@Override
+	public List<Employee> getEngineers() {
+		return engineerMapper.getAllEngineers();
+	}
+}

@@ -1,0 +1,42 @@
+package com.ese.service.engineer.serviceresult;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ese.mappers.engineer.service.RepairInfoMapper;
+import com.ese.mappers.engineer.service.ServiceResultMapper;
+import com.ese.mappers.engineer.service.UsingPartMapper;
+import com.ese.mappers.manage.part.PartMapper;
+import com.ese.vo.Division;
+import com.ese.vo.afterservice.RepairInfo;
+import com.ese.vo.part.Part;
+
+@Service
+public class ServiceResultServiceImpl implements ServiceResultService {
+
+	@Autowired
+	RepairInfoMapper repairMapper;
+	@Autowired
+	ServiceResultMapper resultMapper;
+	@Autowired
+	UsingPartMapper usingPartMapper;
+	@Autowired
+	PartMapper partMapper;
+	
+	@Override
+	public void serviceComplete(Integer serviceNo) {
+		
+	}
+
+	@Override
+	public List<RepairInfo> getAllRepairInfo() {
+		return repairMapper.getAllRepairInfo();
+	}
+
+	@Override
+	public List<Part> getPartsByDivision(Division division) {
+		return partMapper.getParts(division);
+	}
+}

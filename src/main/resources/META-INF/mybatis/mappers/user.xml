@@ -16,7 +16,7 @@
 		from dual
 	</select>
 	
-	<select id="getUserById" parameterType="String" resultType="User">
+	<select id="getUserById" parameterType="string" resultType="User">
 		select
 			user_no			as no,
 			user_id			as	id,
@@ -32,4 +32,14 @@
 			user_id = #{value}
 	</select>
 	
+	<update id="updateInfo" parameterType="User">
+      update sc_user
+      <set>
+         <if test="pw != null">user_pw=#{pw},</if>
+         <if test="phone != null">user_phone=#{phone},</if>
+         <if test="email != null">user_email=#{email},</if>
+      </set>
+      where 
+         user_no = #{no}
+   </update>
 </mapper>

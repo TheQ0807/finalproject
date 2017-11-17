@@ -1,0 +1,23 @@
+package com.ese.mappers.engineer;
+
+import java.util.List;
+
+import com.ese.vo.hr.Break;
+import com.ese.vo.hr.Employee;
+
+public interface EngineerMapper {
+	
+	Employee getEmployeeById(String email);
+	
+	//달력
+	int getBreakSeq();
+	List<Break> getAllEngiBreak(Break break1);
+	Break getEngiBreakByEmpNoDetail(int no);
+	List<Break> getEngiBreakForEmpNoMonth(Break break1);
+	void addEngiBreak(Break break1);
+	void modifyBreakByNo(Break break1);
+	void deleteEngiBreakByNo(int no);
+	List<Employee> getAllEngineers();
+	Break getEngiBreakByNoDetail(int no);
+	
+}
