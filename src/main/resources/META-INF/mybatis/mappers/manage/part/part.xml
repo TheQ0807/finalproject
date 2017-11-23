@@ -393,13 +393,15 @@
 			C.DIVISION_ID		"division.id",
 			C.DIVISION_NAME		"division.name",
 			C.CATEGORY_ID		"division.category.id",
+			C.CATEGORY_NAME		"division.category.name",
 			A.PART_INFO			info,
 			A.PART_IMAGEPATH	imagepath
 		from
 			sc_part A, PART_STATUS B, (select 
 											A.DIVISION_ID,
 											A.DIVISION_NAME,
-											A.CATEGORY_ID
+											A.CATEGORY_ID,
+											B.CATEGORY_NAME
 										from
 											SC_DIVISION A, SC_CATEGORY B
 										where
@@ -451,33 +453,4 @@
 		where
 			part_no = #{no}
 	</update>
-	
-	<select id="getBupumList" resultType="Part">
-		select
-			A.PART_NO 			no,
-			A.PART_NAME			name,
-			A.PART_PRICE		price,
-			A.PART_COST			cost,
-			A.PART_QTY			qty,
-			B.PART_STATUS		"partStatus.status",
-			B.PART_ID			"partStatus.id",
-			C.DIVISION_NAME		"division.name",
-			A.PART_INFO			info,
-			A.PART_IMAGEPATH	imagepath
-			
-		from
-			sc_part A, PART_STATUS B, (select 
-											A.DIVISION_ID,
-											A.DIVISION_NAME
-										from
-											SC_DIVISION A, SC_CATEGORY B
-										where
-											A.CATEGORY_ID = B.CATEGORY_ID)C
-		where
-			A.PART_ID = B.PART_ID
-		and
-			A.DIVISION_ID = C.DIVISION_ID
-		and
-			B.PART_ID = 'PART-SALES'
-	</select>
 </mapper>

@@ -4,6 +4,13 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ese.mappers.engineer.EngineerMapper">
 	
+	<select id="getBoardMain" resultType="EmployeeNotice">
+		SELECT notice_title		as title,
+		 notice_createdate	as createdate
+		FROM (SELECT notice_title, notice_createdate, ROW_NUMBER() OVER (ORDER BY notice_no desc) x
+				 FROM employee_notice A) 
+		WHERE x &lt;= 2
+	</select>
 	<select id="getEmployeeById" parameterType="String" resultType="Employee">
 		select
 			A.employee_no			as	no, 

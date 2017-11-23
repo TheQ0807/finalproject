@@ -27,7 +27,7 @@
          A.employee_hiredate      as hiredate,
          A.employee_work         as work,
          A.center_id			 as "center.id",
-         A.dept_id				 as	"dept_id",
+         A.dept_id				 as	"department.id",
          A.employee_pic_path	 as pic,
          A.position_id			 as "position.id", 
          C.center_name            as "center.name",
@@ -41,6 +41,9 @@
       	 A.center_id = C.center_id
       and
       	 A.position_id = D.position_id 
+      and
+      	 A.employee_work = 'Y'
+      order by employee_no
    </select>
    
    <select id="getByDetpId" parameterType="string" resultType="Employee">
@@ -55,7 +58,7 @@
          A.employee_work         as work,
          A.center_id			 as "center.id",
          A.employee_pic_path	 as pic,
-         A.dept_id				 as	"dept_id",
+         A.dept_id				 as	"department.id",
          A.position_id			 as "position.id", 
          C.center_name            as "center.name",
          B.dept_name               as "department.name",
@@ -125,7 +128,7 @@
 			A.employee_email		as email,
 			A.employee_hiredate		as hiredate,
 			A.center_id				as "center.id",
-			A.dept_id				as "dept_id",
+			A.dept_id				as "department.id",
 			A.employee_pic_path		as pic,
 			A.position_id			as "position.id", 
 			C.center_name           as "center.name",
@@ -156,7 +159,7 @@
 	         A.employee_hiredate      as hiredate,
 	         A.employee_work         as work,
 	         A.center_id			 as "center.id",
-	         A.dept_id				 as	"dept_id",
+	         A.dept_id				 as	"department.id",
 	         A.employee_pic_path	 as pic,
 	         A.position_id			 as "position.id", 
 	         C.center_name            as "center.name",
@@ -192,7 +195,7 @@
 	         A.employee_hiredate      as hiredate,
 	         A.employee_work         as work,
 	         A.center_id			 as "center.id",
-	         A.dept_id				 as	"dept_id",
+	         A.dept_id				 as	"department.id",
 	         A.employee_pic_path	 as pic,
 	         A.position_id			 as "position.id", 
 	         C.center_name            as "center.name",
@@ -226,7 +229,7 @@
 	         A.employee_hiredate      as hiredate,
 	         A.employee_work         as work,
 	         A.center_id			 as "center.id",
-	         A.dept_id				 as	"dept_id",
+	         A.dept_id				 as	"department.id",
 	         A.employee_pic_path	 as pic,
 	         A.position_id			 as "position.id", 
 	         C.center_name            as "center.name",
@@ -254,6 +257,35 @@
 			</choose>
 		</if>
 			
+	</select>
+	
+	<select id="getEmpById" parameterType="string" resultType="Employee">
+	select
+         A.employee_no            as no,
+         A.employee_password      as password,
+         A.employee_email         as email,
+         A.employee_salary         as salary,
+         A.employee_name         as name,
+         A.employee_phone         as phone,
+         A.employee_hiredate      as hiredate,
+         A.employee_work         as work,
+         A.center_id			 as "center.id",
+         A.employee_pic_path	 as pic,
+         A.dept_id				 as	"department.id",
+         A.position_id			 as "position.id", 
+         C.center_name            as "center.name",
+         B.dept_name               as "department.name",
+         D.position_name            as "position.name"
+      from
+         sc_employee A , sc_department B, sc_center C, sc_position D
+      where
+      	 A.dept_id = B.dept_id
+      and
+      	 A.center_id = C.center_id
+      and
+      	 A.position_id = D.position_id 
+      and
+      	 A.employee_email = #{value}
 	</select>
 	
 </mapper>

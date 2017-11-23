@@ -1,0 +1,120 @@
+$(function() {
+	$('.list-cat').siblings().hide();
+	$('.list-cat').on('click', function(e) {
+		e.preventDefault();
+	    $('.glyphicon', this)
+	      .toggleClass('glyphicon-chevron-right')
+	      .toggleClass('glyphicon-chevron-down');
+	    $(this).parents("li").siblings().removeClass("active");
+	    $(this).parents("li").addClass("active");
+	    $(this).siblings().toggle("slow");
+	    var categoryId = $(this).attr("id");
+	    var divisionId = "0";
+	    var pageNo = 1;
+	    $.getJSON("/rest/getparts", {pageNo:pageNo, divisionId:divisionId, categoryId:categoryId}).done(function(result){
+			var html="";
+			if(result.parts.length!=0){
+				$.each(result.parts, function(index, part){
+					html += "<tr>"
+					html += "<td>"+part.no+"</td>"
+					html += "<td><a href='' data-toggle='modal' data-target='#part-form-modal' id='part-no-"+part.no+"'>"+part.name+"</a></td>"
+					html += "<td>"+part.qty+"</td>"
+					html += "<td>"+part.cost+"</td>"
+					html += "<td>"+part.price+"</td>"
+					html += "</tr>"
+				})
+			}else{
+				html += "<tr>"
+				html += "<td>등록된 부품이 없습니다</td>"
+				html += "</tr>"
+			}
+			$("#part-table tbody tr").remove();
+			$("#part-table tbody").append(html);
+			
+			var html2='';
+			var navi = result.navi;
+			if(result.parts.length!=0){
+				html2 += '<li><a href="1">&laquo;</a>';
+				if (navi.pageNo >= 2) {
+					html2 += '<li><a href="'+(navi.pageNo-1)+'">&lt;</a>';
+				} else {
+					html2 += '<li class="disabled"><span>&lt;</span></li>';
+				}
+				for(var i=navi.beginPage; i <=navi.endPage;i++){
+					html2 += '<li class="'+((navi.pageNo == i) ? "active" : "")+'"><a href='+i+'>'+i+'</a></li>';
+				}
+				if (navi.pageNo <navi.totalPages) {
+					html2 += '<li><a href="'+(navi.pageNo+1)+'">&gt;</a>';
+				} else {
+					html2 += '<li class="disabled"><span>&gt;</span></li>';
+				}
+				html2 += '<li><a href="'+navi.totalPages+'">&raquo;</a>';
+			};
+			$("#navi-pagination").html(html2);
+		})
+	});
+	$("a[id^=list-div]").click(function(e){
+		e.preventDefault();
+		$(".pickedDiv").removeClass("pickedDiv");
+		$(this).addClass("pickedDiv");
+		if($(".pickedDiv").attr("id")){
+			var divisionId = $(".pickedDiv").attr("id").replace("list-div-","");
+		}else{
+			var divisionId = 0;
+		}
+		var categoryId = $(this).parents("ul[id^=list]").attr("id").replace("list-","");
+	    var pageNo = 1;
+	    $.getJSON("/rest/getparts", {pageNo:pageNo, divisionId:divisionId, categoryId:categoryId}).done(function(result){
+			var html="";
+			if(result.parts.length!=0){
+				$.each(result.parts, function(index, part){
+					html += "<tr>"
+					html += "<td>"+part.no+"</td>"
+					html += "<td><a href='' data-toggle='modal' data-target='#part-form-modal' id='part-no-"+part.no+"'>"+part.name+"</a></td>"
+					html += "<td>"+part.qty+"</td>"
+					html += "<td>"+part.cost+"</td>"
+					html += "<td>"+part.price+"</td>"
+					html += "</tr>"
+				})
+			}else{
+				html += "<tr>"
+				html += "<td>등록된 부품이 없습니다</td>"
+				html += "</tr>"
+			}
+			$("#part-table tbody tr").remove();
+			$("#part-table tbody").append(html);
+			
+			var html2='';
+			var navi = result.navi;
+			if(result.parts.length!=0){
+				html2 += '<li><a href="1">&laquo;</a>';
+				if (navi.pageNo >= 2) {
+					html2 += '<li><a href="'+(navi.pageNo-1)+'">&lt;</a>';
+				} else {
+					html2 += '<li class="disabled"><span>&lt;</span></li>';
+				}
+				for(var i=navi.beginPage; i <=navi.endPage;i++){
+					html2 += '<li class="'+((navi.pageNo == i) ? "active" : "")+'"><a href='+i+'>'+i+'</a></li>';
+				}
+				if (navi.pageNo <navi.totalPages) {
+					html2 += '<li><a href="'+(navi.pageNo+1)+'">&gt;</a>';
+				} else {
+					html2 += '<li class="disabled"><span>&gt;</span></li>';
+				}
+				html2 += '<li><a href="'+navi.totalPages+'">&raquo;</a>';			
+			}
+			$("#navi-pagination").html(html2);
+		})
+	})
+	$("#part-table tbody").on("click","a[id^=part-no]",function(){
+		var partNo = $(this).attr("id").replace("part-no-","");
+		$.getJSON("/rest/part/"+partNo).done(function(part){
+			var imgpath = '/resources/images/part/'+part.imagepath
+			$("#part-no").text(part.no);
+			$("#part-name").text(part.name);
+			$("#part-modelName").text(part.modelName);
+			$("#part-qty").text(part.qty);
+			$("#part-img").attr("src", imgpath);
+		})
+	})
+})

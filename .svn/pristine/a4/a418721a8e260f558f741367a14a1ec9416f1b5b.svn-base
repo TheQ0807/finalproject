@@ -1,0 +1,46 @@
+package com.ese.controller.manage.finance;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.ese.service.manage.pay.PayChangeService;
+import com.ese.vo.common.PayChangeCriteria;
+import com.ese.vo.pay.PayChange;
+
+@Controller
+@RequestMapping("/manage/finance")
+public class FinanceController {
+	
+	@Autowired
+	PayChangeService changeService;
+
+	@RequestMapping("/main.do")
+	public String financePage() {
+		
+		return "manage/finance/main";
+	}
+	
+	@RequestMapping("/payAnalysis.do")
+	public String payChange() {
+		
+		return "manage/finance/payChange";
+	}
+	
+	@RequestMapping("/payChange/getAnalysis.do")
+	@ResponseBody
+	public List<PayChange> getChange(String startDate, String endDate, String type) {
+		
+		PayChangeCriteria criteria = new PayChangeCriteria();
+		
+		criteria.setStartDate(startDate);
+		criteria.setEndDate(endDate);
+		criteria.setType(type);
+		
+		return changeService.getChangeByCriteria(criteria);
+	}
+	
+}

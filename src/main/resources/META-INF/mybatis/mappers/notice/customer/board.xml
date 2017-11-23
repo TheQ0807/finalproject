@@ -14,10 +14,10 @@
 			<if test="keyword != ''">
 				<choose>
 					<when test="opt == 'title'">
-						and A.board_title like '%' || #{keyword} || '%'
+						and notice_title like '%' || #{keyword} || '%'
 					</when>
 					<when test="opt == 'contents'">
-						and A.board_contents like '%' || #{keyword} || '%'
+						and notice_contents like '%' || #{keyword} || '%'
 					</when>
 				</choose>
 			</if>

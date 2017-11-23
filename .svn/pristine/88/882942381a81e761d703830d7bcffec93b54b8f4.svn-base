@@ -1,0 +1,103 @@
+package com.ese.controller.servicecenter.order;
+
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ese.service.manage.part.PartService;
+import com.ese.service.servicecenter.order.OrderService;
+import com.ese.vo.Category;
+import com.ese.vo.Division;
+import com.ese.vo.User;
+import com.ese.vo.forms.PurchaseForm;
+import com.ese.vo.order.Order;
+import com.ese.vo.part.Part;
+
+@Controller
+public class SCOrderController {
+	
+	@Autowired
+	OrderService orderService;
+	
+	@Autowired
+	PartService partService;
+	
+	@RequestMapping("/order/detail.do")
+	public String main(Model model) {
+		return "servicecenter/order/detail";
+	}
+	
+	@RequestMapping("/order/purchase.do")
+	public String purchase(HttpSession session, Model model) {
+		User user = (User)session.getAttribute("loginUser");
+		model.addAttribute("loginUser",user);
+		return "servicecenter/order/purchase";
+	}
+	
+	@RequestMapping("/order/list.do")
+	public String list(Model model) {
+		List<Category> categories = partService.getCategory();
+		
+		List<Division> phoneDivisions = partService.getDivisions("CAT-PH");
+		List<Division> computerDivisions = partService.getDivisions("CAT-COM");
+		List<Division> appliancesDivisions = partService.getDivisions("CAT-AP");
+		List<Division> wearableDivisions = partService.getDivisions("CAT-WE");
+		List<Division> soundDiviceDivisions = partService.getDivisions("CAT-SD");
+
+		model.addAttribute("categories", categories);
+		model.addAttribute("phoneDivisions", phoneDivisions);
+		model.addAttribute("computerDivisions", computerDivisions);
+		model.addAttribute("appliancesDivisions", appliancesDivisions);
+		model.addAttribute("wearableDivisions", wearableDivisions);
+		model.addAttribute("soundDiviceDivisions", soundDiviceDivisions);
+		
+		return "servicecenter/order/expendableList";
+	}
+	
+	@RequestMapping("/order/addOrder.do")
+	public String addOrder(PurchaseForm purchaseForm) {
+		System.out.println(purchaseForm);
+		
+		int seq = orderService.getOrderSeq();
+		
+		Order order = new Order();
+		
+		order.setNo(seq);
+		
+		BeanUtils.copyProperties(purchaseForm, order);
+		
+		Part part = new Part();
+		User user = new User();
+		
+		part.setNo(purchaseForm.getPartNo());
+		
+		user.setNo(purchaseForm.getBuyerNo());
+		
+		String addr1 = purchaseForm.getAddress1();
+		String addr2 = purchaseForm.getAddress2();
+		String realAddr = addr1+", "+addr2;
+		
+		order.setAddress(realAddr);
+		order.setPart(part);
+		order.setUser(user);
+		
+		orderService.addOrder(order);
+		
+		return "servicecenter/order/pay?orderNo="+seq;
+	}
+	
+	@RequestMapping("/order/pay.do")
+	public String pay(int seq, Model model) {
+		Order order =  orderService.getOrderByNo(seq);
+		
+		model.addAttribute("order", order);
+		
+		return "servicecenter/order/pay";
+	}
+}
