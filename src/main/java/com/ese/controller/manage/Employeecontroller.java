@@ -119,10 +119,8 @@ public class EmployeeController {
 	public String login(Model model, HttpSession session) {
 		model.addAttribute("notis" ,employeeNoticeService.getTwoRows());
 		Employee employee  = (Employee) session.getAttribute("loginedHR");
+		
 		if(employee != null) {
-			if(employee.getDepartment().getId().equals("DEPT-SC")) {
-				return "redirect:/manage/login.do?error=fail2";
-			}
 			if(employee.getDepartment().getId().equals("DEPT-HR")) {
 	 			return "redirect:/manage/personnel/main.do";
 	 		}
@@ -134,6 +132,10 @@ public class EmployeeController {
 	 		}
 	 		if(employee.getDepartment().getId().equals("DEPT-FIN")) {
 	 			return "redirect:/manage/finance/main.do";
+	 		}
+	 		if(employee.getDepartment().getId().equals("DEPT-SC")) {
+	 			session.removeAttribute("loginedHR");
+	 			return "redirect:/engineer/main.do?error=otheremp";
 	 		}
 			
 			
@@ -160,7 +162,7 @@ public class EmployeeController {
  		session.setAttribute("loginedHR", users);
  		
  		if(users.getDepartment().getId().equals("DEPT-SC")) {
- 			return "redirect:/manage/login.do?error=fail2";
+ 			return "redirect:/engineer/main.do";
  		}
  		if(users.getDepartment().getId().equals("DEPT-HR")) {
  			return "redirect:/manage/personnel/main.do";
@@ -194,6 +196,13 @@ public class EmployeeController {
 	public String logout(HttpSession session) {
 		session.removeAttribute("loginedHR");
 		return "redirect:/manage/login.do";
+	}
+	
+	@RequestMapping("manage/personnel/changeInfoEmp.do")
+	public String changeInfoEmp(Model model, HttpSession session) {
+		Employee emp = (Employee) session.getAttribute("loginedHR");
+		model.addAttribute("changeInfo", emp);
+		return "manage/personnel/changeInfoEmp";
 	}
 }
 

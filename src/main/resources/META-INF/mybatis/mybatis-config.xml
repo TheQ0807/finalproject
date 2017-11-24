@@ -46,6 +46,7 @@
 		<typeAlias alias="PayChangeCriteria" type="com.ese.vo.common.PayChangeCriteria"/>
 		<typeAlias alias="MonthlyPay" type="com.ese.vo.pay.MonthlyPay"/>
 		<typeAlias alias="OtherPay" type="com.ese.vo.pay.OtherPay"/>
+		<typeAlias alias="ChartResult" type="com.ese.vo.common.PayChangeChartResult"/>
 		<!-- ///////////////////////////////// -->
 		
 		<!-- 승용 -->

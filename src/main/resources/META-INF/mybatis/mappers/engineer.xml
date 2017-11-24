@@ -25,6 +25,7 @@
 			A.position_id			as "position.id", 
 			C.center_id 	        as "center.id",
 			C.center_name           as "center.name",
+			B.dept_name             as "department.id",
 			B.dept_name             as "department.name",
 			D.position_name         as "position.name"
 		from
@@ -82,6 +83,7 @@
 			A.break_reason			as	reason,
 			A.break_fetchFile		as	fetchFile,
 			B.employee_name			as	"employee.name",
+			B.dept_id				as	"employee.department.id",
 			B.center_id				as	"employee.center.id",
 			A.break_completed		as	completed
 		from 
@@ -94,6 +96,8 @@
 			A.break_no in (select distinct break_no from break_sign where sign_status != '반려')
 		and
 			C.center_id = #{employee.center.id}
+		and 
+			B.dept_id != #{employee.department.id}
 		and
 			A.break_startdate >= #{startdate}
 		and 
