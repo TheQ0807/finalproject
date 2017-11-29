@@ -33,7 +33,7 @@
 	</logger>
 	
 	<logger name="com.ese.mappers">
-		<level value="debug" />
+		<level value="info" />
 	</logger>
 
 	<!-- Root Logger -->

@@ -145,6 +145,10 @@
 		and
 			A.center_id = #{value}
 		and
+			A.dept_id = 'DEPT-SC'
+		and
+			A.position_id != 'POS-CM'
+		and
 			A.employee_work	= 'Y'
 	</select>
 
@@ -287,5 +291,16 @@
       and
       	 A.employee_email = #{value}
 	</select>
+	
+	<update id="changeEmp" parameterType="Employee">
+		update
+			sc_employee
+		set
+			employee_password = #{password},
+			employee_pic_path = #{pic},
+			employee_phone	  = #{phone}
+		where
+			employee_no = #{no}
+	</update>
 	
 </mapper>

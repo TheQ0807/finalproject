@@ -1,0 +1,21 @@
+package com.ese.mappers.manage.pay;
+
+import java.util.List;
+
+import com.ese.vo.common.DayResultCriteria;
+import com.ese.vo.common.PayChangeCriteria;
+import com.ese.vo.pay.BalanceAccount;
+import com.ese.vo.pay.MonthlyPay;
+import com.ese.vo.pay.PayChange;
+
+public interface MonthlyPayMapper {
+
+	List<MonthlyPay> getMonthlyPayByMonth(String month);
+	MonthlyPay getMonthlyPayByCriteria(PayChangeCriteria criteria);
+	void addMonthlyPay(MonthlyPay pay);
+	// 일일 결산
+	void DayResult(BalanceAccount account);
+	BalanceAccount DayResultOne();
+	List<PayChange> getPayChangesResult();
+	List<BalanceAccount> weekResult(DayResultCriteria dayResultCriteria);
+}

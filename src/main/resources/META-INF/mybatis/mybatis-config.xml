@@ -5,9 +5,13 @@
 <configuration>
 	
 	<typeAliases>
+		<!-- 성우 -->
 		<typeAlias alias="Employee" type="com.ese.vo.hr.Employee"/>
 		<typeAlias alias="User" type="com.ese.vo.User"/>
 		<typeAlias alias="BreakSign" type="com.ese.vo.hr.BreakSign"/>
+		<typeAlias alias="Suggest" type="com.ese.vo.notice.Suggest"/>
+		<typeAlias alias="DownloadNotice" type="com.ese.vo.notice.DownloadNotice"/>
+		<typeAlias alias="FileAttach" type="com.ese.vo.notice.FileAttach"/>
 		
 		<!-- 인선 -->
 		<typeAlias alias="Category" type="com.ese.vo.Category"/>
@@ -21,14 +25,13 @@
 		<typeAlias alias="OrderStatus" type="com.ese.vo.order.OrderStatus"/>
 		<typeAlias alias="PartCriteria" type="com.ese.vo.common.PartCriteria"/>
 		<typeAlias alias="OrderCriteria" type="com.ese.vo.common.OrderCriteria"/>
+		<typeAlias alias="Appraisal" type="com.ese.vo.order.Apparaisal"/>
 		<!-- /////////////////// -->
 		
 		<!-- 은택 -->
 		<typeAlias alias="CustomerNotice" type="com.ese.vo.notice.CustomerNotice"/>
 		<typeAlias alias="EmployeeNotice" type="com.ese.vo.notice.EmployeeNotice"/>
 		<typeAlias alias="Pagination" type="com.ese.vo.pagination.notice.Pagination"/>
-		<typeAlias alias="Suggest" type="com.ese.vo.notice.Suggest"/>
-		<typeAlias alias="DownloadNotice" type="com.ese.vo.notice.DownloadNotice"/>
 		
 		<!-- 형택 -->
 		<typeAlias alias="Center" type="com.ese.vo.afterservice.Center"/>
@@ -55,6 +58,8 @@
 		<typeAlias alias="UseServiceCriteria" type="com.ese.vo.common.UseServiceCriteria"/>
 		<typeAlias alias="ServiceResult" type="com.ese.vo.afterservice.ServiceResult"/>
 		<typeAlias alias="UsingPart" type="com.ese.vo.afterservice.UsingPart"/>
+		<typeAlias alias="DayResult" type="com.ese.vo.pay.BalanceAccount"/>
+		<typeAlias alias="DayResultCriteria" type="com.ese.vo.common.DayResultCriteria"/>
 		<!-- /////////////////////////// -->
 	</typeAliases>
 
@@ -77,16 +82,20 @@
 		<mapper resource="META-INF/mybatis/mappers/notice/customer/board.xml" />
 		<mapper resource="META-INF/mybatis/mappers/notice/employee/board.xml" />
 		<mapper resource="META-INF/mybatis/mappers/suggest/board.xml" />
+		<mapper resource="META-INF/mybatis/mappers/notice/download/board.xml" />
 		<mapper resource="META-INF/mybatis/mappers/servicecenter/center.xml" />
 		<mapper resource="META-INF/mybatis/mappers/servicecenter/location.xml" />
 		<mapper resource="META-INF/mybatis/mappers/servicecenter/servicereserve.xml" />
 		<mapper resource="META-INF/mybatis/mappers/servicecenter/order.xml" />
+		<mapper resource="META-INF/mybatis/mappers/servicecenter/appraisal.xml" />
 		<mapper resource="META-INF/mybatis/mappers/manage/pay/paychange.xml" />
 		<mapper resource="META-INF/mybatis/mappers/manage/pay/monthlyPay.xml" />
 		<mapper resource="META-INF/mybatis/mappers/manage/pay/otherpay.xml" />
+		<mapper resource="META-INF/mybatis/mappers/manage/pay/dayresult.xml" />
 		<mapper resource="META-INF/mybatis/mappers/serviceresult/serviceresult.xml" />
 		<mapper resource="META-INF/mybatis/mappers/serviceresult/repairinfo.xml" />
 		<mapper resource="META-INF/mybatis/mappers/serviceresult/usingpart.xml" />
+		<mapper resource="META-INF/mybatis/mappers/download/upload.xml" />
 	</mappers>
 	
 </configuration>
