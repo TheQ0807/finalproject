@@ -25,6 +25,7 @@
 		<typeAlias alias="OrderStatus" type="com.ese.vo.order.OrderStatus"/>
 		<typeAlias alias="PartCriteria" type="com.ese.vo.common.PartCriteria"/>
 		<typeAlias alias="OrderCriteria" type="com.ese.vo.common.OrderCriteria"/>
+		<typeAlias alias="DownNoticeCriteria" type="com.ese.vo.common.DownNoticeCriteria"/>
 		<typeAlias alias="Appraisal" type="com.ese.vo.order.Apparaisal"/>
 		<!-- /////////////////// -->
 		

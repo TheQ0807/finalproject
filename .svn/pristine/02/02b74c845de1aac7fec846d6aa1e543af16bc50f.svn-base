@@ -13,7 +13,7 @@
 <body>
 	<div class="container">
 		<h1>글 작성</h1>
-		<form method="post" action="/user/addalert.do">
+		<form method="post" action="add.do">
 			<div class="form-group">
 				<label>제목</label>
 				<input type="text" class="form-control" id="title" name="title">
@@ -28,5 +28,6 @@
 			</div>
 		</form>
 	</div>
+	<%@ include file="/WEB-INF/views/commons/footer.jsp" %>
 </body>
 </html>

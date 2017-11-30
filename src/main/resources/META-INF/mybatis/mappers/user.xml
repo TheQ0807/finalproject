@@ -16,6 +16,22 @@
 		from dual
 	</select>
 	
+	<select id="getUserByNo" parameterType="int" resultType="User" >
+		select
+			user_no			as no,
+			user_id			as	id,
+			user_pw			as	pw,
+			user_zipcode	as	zipcode,
+			user_address	as	address,	
+			user_email		as	email,
+			user_phone		as	phone,
+			user_name		as	name
+		from
+			sc_user
+		where
+			user_no = #{value}
+	</select>
+	
 	<select id="getUserById" parameterType="string" resultType="User">
 		select
 			user_no			as no,

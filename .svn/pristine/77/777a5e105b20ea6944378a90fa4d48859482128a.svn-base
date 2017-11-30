@@ -1,0 +1,2438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <interface id="1" language="java" name="com.ese.service.manage.pay.PayChangeService" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/manage/pay/PayChangeService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="243" width="357" x="9316" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="2" language="java" name="com.ese.vo.notice.EmployeeNotice" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/notice/EmployeeNotice.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="351" width="147" x="-35" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="3" language="java" name="com.ese.service.manage.part.PartService" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/manage/part/PartService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="405" width="246" x="16476" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="4" language="java" name="com.ese.service.engineer.inventory.InventoryService" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/engineer/inventory/InventoryService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="200" x="12352" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="5" language="java" name="com.ese.service.engineer.serviceresult.ServiceResultServiceImpl" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/engineer/serviceresult/ServiceResultServiceImpl.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="300" x="12896" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.ese.service.engineer.EngineerServiceImpl" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/engineer/EngineerServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="423" width="274" x="9713" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.ese.vo.pay.MonthlyPay" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/pay/MonthlyPay.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="164" x="8195" y="1357"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.ese.vo.hr.Break" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/hr/Break.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="513" width="164" x="7501" y="1357"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="com.ese.common.encrypt.Sha256" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/common/encrypt/Sha256.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="130" x="152" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="com.ese.service.manage.pay.PayChangeServiceImpl" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/manage/pay/PayChangeServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="261" width="357" x="8984" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="com.ese.vo.forms.DownloadNoticeBoardForm" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/forms/DownloadNoticeBoardForm.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="297" width="179" x="322" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="com.ese.controller.engineer.EngineerController" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/engineer/EngineerController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="247" x="10027" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="com.ese.controller.manage.EmployeeAjaxController" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/manage/EmployeeAjaxController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="261" width="265" x="7601" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="14" language="java" name="com.ese.mappers.notice.SuggestBoardMapper" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/notice/SuggestBoardMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="217" x="20265" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="15" language="java" name="com.ese.service.servicecenter.LocaleService" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/servicecenter/LocaleService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="204" x="16232" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="16" language="java" name="com.ese.vo.User" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/User.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="531" width="142" x="7565" y="2000"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="17" language="java" name="com.ese.mappers.manage.part.PartMapper" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/manage/part/PartMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="261" width="243" x="13897" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="18" language="java" name="com.ese.service.servicecenter.order.OrderServiceImpl" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/servicecenter/order/OrderServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="261" width="237" x="13880" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="19" language="java" name="com.ese.mappers.manage.part.PartUsingModelMapper" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/manage/part/PartUsingModelMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="246" x="14389" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="20" language="java" name="com.ese.vo.notice.FileAttach" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/notice/FileAttach.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="297" width="147" x="17877" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="com.ese.controller.engineer.paystub.EngineerPayController" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/engineer/paystub/EngineerPayController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="292" x="9381" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="com.ese.controller.notice.EmployeeNoticeController" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/notice/EmployeeNoticeController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="195" x="7906" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="com.ese.controller.engineer.cm.CenterMasterController" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/engineer/cm/CenterMasterController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="195" x="10314" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="com.ese.controller.manage.EmployeeController" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/manage/EmployeeController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="279" width="247" x="8141" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="com.ese.service.notice.EmployeeNoticeServiceImpl" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/notice/EmployeeNoticeServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="253" x="7308" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="com.ese.vo.common.OrderCriteria" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/common/OrderCriteria.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="603" width="167" x="541" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="com.ese.vo.forms.PurchaseForm" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/forms/PurchaseForm.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="693" width="151" x="748" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="com.ese.controller.manage.finance.FinanceController" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/manage/finance/FinanceController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="294" x="8650" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="com.ese.controller.notice.DownloadNoticeController" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/notice/DownloadNoticeController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="244" x="17346" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="com.ese.vo.common.ServiceEngineerResult" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/common/ServiceEngineerResult.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="217" x="7995" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="com.ese.common.view.QRCodeGenerateView" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/common/view/QRCodeGenerateView.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="480" x="939" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="com.ese.service.engineer.reserve.ReserveServiceImpl" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/engineer/reserve/ReserveServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="265" x="12345" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="com.ese.service.manage.BreakApplyServiceImpl" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/manage/BreakApplyServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="221" x="7047" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="34" language="java" name="com.ese.mappers.manage.BreakApplyMapper" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/manage/BreakApplyMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="221" x="8810" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="35" language="java" name="com.ese.controller.servicecenter.user.SCUserajaxController" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/servicecenter/user/SCUserajaxController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="217" x="18085" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="com.ese.vo.product.Product" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/product/Product.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="146" x="8603" y="1357"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="37" language="java" name="com.ese.service.servicecenter.reservation.ReservationService" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/servicecenter/reservation/ReservationService.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="343" x="15605" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="38" language="java" name="com.ese.vo.afterservice.ServiceResult" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/afterservice/ServiceResult.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="279" width="171" x="11273" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="39" language="java" name="com.ese.controller.engineer.alert.EngineerAlertAjaxController" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/engineer/alert/EngineerAlertAjaxController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="182" x="8428" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="40" language="java" name="com.ese.mappers.notice.CustomerNoticeMapper" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/notice/CustomerNoticeMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="253" x="19709" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="41" language="java" name="com.ese.controller.manage.part.PartWebController" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/manage/part/PartWebController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="243" width="181" x="16231" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="42" language="java" name="com.ese.service.notice.DownloadNoticeService" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/notice/DownloadNoticeService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="207" x="17488" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="43" language="java" name="com.ese.vo.order.Apparaisal" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/order/Apparaisal.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="143" x="7812" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="44" language="java" name="com.ese.vo.pay.BalanceAccount" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/pay/BalanceAccount.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="567" width="181" x="1459" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="45" language="java" name="com.ese.service.manage.EmployeeServiceImpl" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/manage/EmployeeServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="243" width="225" x="12080" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="46" language="java" name="com.ese.vo.forms.Userform" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/forms/Userform.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="585" width="152" x="1680" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="47" language="java" name="com.ese.vo.hr.Employee" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/hr/Employee.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="693" width="182" x="7747" y="2000"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="48" language="java" name="com.ese.common.serializer.YYYYMMDDDataSerializer" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/common/serializer/YYYYMMDDDataSerializer.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="281" x="1872" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="49" language="java" name="com.ese.service.notice.CustomerNoticeService" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/notice/CustomerNoticeService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="253" x="19416" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="50" language="java" name="com.ese.mappers.engineer.service.ServiceResultMapper" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/engineer/service/ServiceResultMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="282" x="11505" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="51" language="java" name="com.ese.vo.forms.BreakForm" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/forms/BreakForm.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="603" width="209" x="2193" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="52" language="java" name="com.ese.vo.common.PayChangeChartResult" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/common/PayChangeChartResult.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="315" width="155" x="2442" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="53" language="java" name="com.ese.vo.hr.Position" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/hr/Position.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="127" x="7747" y="2733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="54" language="java" name="com.ese.service.engineer.inventory.InventoryServiceImpl" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/engineer/inventory/InventoryServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="200" x="14157" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="55" language="java" name="com.ese.controller.engineer.mypage.EngineerPageAjaxController" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/engineer/mypage/EngineerPageAjaxController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="257" x="10549" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="56" language="java" name="com.ese.vo.forms.PartForm" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/forms/PartForm.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="693" width="172" x="2637" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="57" language="java" name="com.ese.vo.afterservice.City" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/afterservice/City.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="127" x="2849" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="58" language="java" name="com.ese.vo.notice.CustomerNotice" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/notice/CustomerNotice.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="351" width="147" x="3016" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="59" language="java" name="com.ese.vo.afterservice.Center" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/afterservice/Center.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="142" x="7950" y="2733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="60" language="java" name="com.ese.vo.afterservice.AfterService" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/afterservice/AfterService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="531" width="208" x="7747" y="1357"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="61" language="java" name="com.ese.service.manage.part.PartServiceImpl" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/manage/part/PartServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="441" width="246" x="14389" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="62" language="java" name="com.ese.vo.CheckResult" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/CheckResult.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="135" x="3203" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="63" language="java" name="com.ese.common.interceptor.EngineerLoginCheckInterceptor" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/common/interceptor/EngineerLoginCheckInterceptor.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="356" x="3378" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="64" language="java" name="com.ese.vo.common.PartCriteria" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/common/PartCriteria.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="513" width="152" x="3774" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="65" language="java" name="com.ese.vo.common.ServiceCriteria" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/common/ServiceCriteria.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="585" width="160" x="7995" y="1357"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="66" language="java" name="com.ese.vo.afterservice.RepairInfo" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/afterservice/RepairInfo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="243" width="129" x="11273" y="1357"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="67" language="java" name="com.ese.mappers.engineer.service.UsingPartMapper" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/engineer/service/UsingPartMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="246" x="11827" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="68" language="java" name="com.ese.vo.common.UseServiceCriteria" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/common/UseServiceCriteria.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="495" width="142" x="3966" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="69" language="java" name="com.ese.vo.pay.OtherPay" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/pay/OtherPay.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="333" width="182" x="7343" y="2000"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="70" language="java" name="com.ese.controller.notice.CustomNoticeController" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/notice/CustomNoticeController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="195" x="19474" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="71" language="java" name="com.ese.service.manage.EmployeeService" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/manage/EmployeeService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="225" x="8508" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="72" language="java" name="com.ese.vo.forms.SuggestBoardForm" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/forms/SuggestBoardForm.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="143" x="4148" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="73" language="java" name="com.ese.controller.engineer.mypage.EngineerPageController" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/engineer/mypage/EngineerPageController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="248" x="10846" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="74" language="java" name="com.ese.vo.Division" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/Division.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="160" x="8589" y="2000"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="75" language="java" name="com.ese.vo.pagination.notice.Pagination" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/pagination/notice/Pagination.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="711" width="145" x="4331" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="76" language="java" name="com.ese.vo.notice.Suggest" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/notice/Suggest.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="459" width="164" x="8399" y="1357"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="77" language="java" name="com.ese.vo.notice.DownloadNotice" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/notice/DownloadNotice.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="441" width="168" x="17877" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="78" language="java" name="com.ese.vo.order.Order" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/order/Order.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="747" width="170" x="8438" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="79" language="java" name="com.ese.mappers.engineer.service.RepairInfoMapper" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/engineer/service/RepairInfoMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="199" x="12113" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="80" language="java" name="com.ese.mappers.notice.EmployeeNoticeMapper" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/notice/EmployeeNoticeMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="253" x="9071" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="81" language="java" name="com.ese.vo.order.OrderStatus" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/order/OrderStatus.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="123" x="9001" y="1357"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="82" language="java" name="com.ese.service.servicecenter.ServicecenterService" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/servicecenter/ServicecenterService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="352" x="18463" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="83" language="java" name="com.ese.vo.forms.NoticeBoardForm" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/forms/NoticeBoardForm.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="143" x="4516" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="84" language="java" name="com.ese.mappers.servicecenter.ServiceReserveMapper" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/servicecenter/ServiceReserveMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="314" x="12989" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="85" language="java" name="com.ese.vo.hr.BreakSign" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/hr/BreakSign.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="333" width="164" x="7365" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="86" language="java" name="com.ese.vo.afterservice.Locale" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/afterservice/Locale.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="127" x="4699" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="87" language="java" name="com.ese.service.manage.BreakApplyService" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/manage/BreakApplyService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="221" x="9364" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="88" language="java" name="com.ese.mappers.manage.part.CategoryMapper" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/manage/part/CategoryMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="169" x="14180" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="89" language="java" name="com.ese.service.servicecenter.LocaleServiceImpl" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/servicecenter/LocaleServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="204" x="15987" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="90" language="java" name="com.ese.vo.product.PartUsingModel" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/product/PartUsingModel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="146" x="8252" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="91" language="java" name="com.ese.common.interceptor.ManageLoginCheckInterceptor" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/common/interceptor/ManageLoginCheckInterceptor.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="356" x="4866" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="92" language="java" name="com.ese.mappers.manage.pay.PayChangeMapper" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/manage/pay/PayChangeMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="357" x="12592" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="93" language="java" name="com.ese.vo.common.PayChangeCriteria" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/common/PayChangeCriteria.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="405" width="160" x="5262" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="94" language="java" name="com.ese.rest.web.manage.part.PartController" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/rest/web/manage/part/PartController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="270" x="16452" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="95" language="java" name="com.ese.mappers.manage.pay.OtherPayMapper" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/manage/pay/OtherPayMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="165" x="8773" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="96" language="java" name="com.ese.mappers.servicecenter.CenterMapper" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/servicecenter/CenterMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="218" x="15347" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="97" language="java" name="com.ese.service.servicecenter.reservation.ReservationServiceImpl" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/servicecenter/reservation/ReservationServiceImpl.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="343" x="15118" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="98" language="java" name="com.ese.controller.servicecenter.user.SCUserController" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/servicecenter/user/SCUserController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="247" x="18342" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="99" language="java" name="com.ese.mappers.servicecenter.LocaleMapper" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/servicecenter/LocaleMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="204" x="15988" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="100" language="java" name="com.ese.mappers.manage.pay.MonthlyPayMapper" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/manage/pay/MonthlyPayMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="298" x="8978" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="101" language="java" name="com.ese.vo.hr.Department" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/hr/Department.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="127" x="7545" y="2733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="102" language="java" name="com.ese.vo.afterservice.ServiceType" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/afterservice/ServiceType.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="127" x="7990" y="2000"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="103" language="java" name="com.ese.mappers.engineer.EngineerMapper" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/engineer/EngineerMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="441" width="279" x="9713" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="104" language="java" name="com.ese.vo.part.PartStatus" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/part/PartStatus.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="131" x="8789" y="2000"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="105" language="java" name="com.ese.service.notice.EmployeeNoticeService" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/notice/EmployeeNoticeService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="253" x="8141" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="106" language="java" name="com.ese.mappers.notice.DownloadNoticeMapper" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/notice/DownloadNoticeMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="207" x="17630" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="107" language="java" name="com.ese.vo.Category" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/Category.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="127" x="8589" y="2733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="108" language="java" name="com.ese.common.interceptor.LoginCheckInterceptor" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/common/interceptor/LoginCheckInterceptor.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="356" x="5462" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="109" language="java" name="com.ese.service.engineer.serviceresult.ServiceResultService" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/engineer/serviceresult/ServiceResultService.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="300" x="10933" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="110" language="java" name="com.ese.vo.common.ReservationEmpASBreakResult" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/common/ReservationEmpASBreakResult.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="203" x="7569" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="111" language="java" name="com.ese.mappers.manage.part.InventoryChangeMapper" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/manage/part/InventoryChangeMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="220" x="13343" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="112" language="java" name="com.ese.vo.pay.PayChange" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/pay/PayChange.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="405" width="210" x="19224" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="113" language="java" name="com.ese.mappers.manage.part.StatusMapper" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/manage/part/StatusMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="174" x="14675" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="114" language="java" name="com.ese.vo.common.UserOrderCriteria" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/common/UserOrderCriteria.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="261" width="144" x="5858" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="115" language="java" name="com.ese.vo.pay.PayChangeType" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/pay/PayChangeType.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="118" x="19258" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="116" language="java" name="com.ese.common.interceptor.UserAjaxController" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/common/interceptor/UserAjaxController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="163" x="18629" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="117" language="java" name="com.ese.controller.servicecenter.ServiceCenterController" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/servicecenter/ServiceCenterController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="161" x="6042" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="118" language="java" name="com.ese.controller.engineer.service.EngineerServiceController" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/engineer/service/EngineerServiceController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="295" x="11745" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="119" language="java" name="com.ese.service.notice.SuggestBoardService" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/notice/SuggestBoardService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="217" x="20002" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="120" language="java" name="com.ese.vo.part.InventoryChange" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/part/InventoryChange.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="122" x="8648" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="121" language="java" name="com.ese.controller.engineer.alert.EngineerAlertController" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/engineer/alert/EngineerAlertController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="283" x="11134" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="122" language="java" name="com.ese.rest.web.servicecenter.order.OrderRestController" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/rest/web/servicecenter/order/OrderRestController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="276" x="17030" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="123" language="java" name="com.ese.controller.notice.SuggestBoardController" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/notice/SuggestBoardController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="223" x="20002" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="124" language="java" name="com.ese.service.notice.DownloadNoticeServiceImpl" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/notice/DownloadNoticeServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="207" x="17630" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="125" language="java" name="com.ese.controller.servicecenter.order.SCOrderController" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/servicecenter/order/SCOrderController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="228" x="16762" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="126" language="java" name="com.ese.mappers.manage.part.ProductMapper" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/manage/part/ProductMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="189" x="14889" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="127" language="java" name="com.ese.vo.forms.EmployeeForm" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/forms/EmployeeForm.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="585" width="155" x="6243" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="128" language="java" name="com.ese.service.notice.CustomerNoticeServiceImpl" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/notice/CustomerNoticeServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="253" x="19709" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="129" language="java" name="com.ese.mappers.manage.EmployeeMapper" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/manage/EmployeeMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="261" width="254" x="13603" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="130" language="java" name="com.ese.vo.afterservice.ServiceStatus" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/afterservice/ServiceStatus.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="131" x="8157" y="2000"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="131" language="java" name="com.ese.service.servicecenter.order.OrderService" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/servicecenter/order/OrderService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="237" x="16762" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="132" language="java" name="com.ese.mappers.servicecenter.ServicecenterMapper" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/servicecenter/ServicecenterMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="363" x="18855" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="133" language="java" name="com.ese.service.notice.SuggestBoardServiceImpl" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/notice/SuggestBoardServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="217" x="20265" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="134" language="java" name="com.ese.controller.engineer.cm.CenterMasterAjaxController" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/engineer/cm/CenterMasterAjaxController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="248" x="11457" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="135" language="java" name="com.ese.controller.servicecenter.reservation.ServiceReservationController" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/servicecenter/reservation/ServiceReservationController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="399" x="15548" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="136" language="java" name="com.ese.vo.part.Part" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/part/Part.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="603" width="172" x="8789" y="1357"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="137" language="java" name="com.ese.service.engineer.reserve.ReserveService" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/engineer/reserve/ReserveService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="265" x="10628" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="138" language="java" name="com.ese.mappers.manage.part.DivisionMapper" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/mappers/manage/part/DivisionMapper.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="189" x="15118" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="139" language="java" name="com.ese.vo.afterservice.UsingPart" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/vo/afterservice/UsingPart.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="206" x="12650" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="140" language="java" name="com.ese.common.mappers.typeHandler.CLOBHandler" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/common/mappers/typeHandler/CLOBHandler.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="307" x="6438" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="141" language="java" name="com.ese.controller.servicecenter.auth.AuthorizationController" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/controller/servicecenter/auth/AuthorizationController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="222" x="6785" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="142" language="java" name="com.ese.service.engineer.EngineerService" project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/engineer/EngineerService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="405" width="274" x="10314" y="570"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="143" language="java" name="com.ese.service.servicecenter.ServicecenterServiceImpl" 
+    project="ES_Electronics_erp" 
+    file="/ES_Electronics_erp/src/main/java/com/ese/service/servicecenter/ServicecenterServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="352" x="18832" y="-181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="144">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="145" name="employee"/>      
+      <multiplicity id="146" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="147">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="148" name="repairInfo"/>      
+      <multiplicity id="149" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="66" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="150">    
+    <end type="SOURCE" refId="139" navigable="false">      
+      <attribute id="151" name="serviceResult"/>      
+      <multiplicity id="152" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="153">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="137"/>  
+  </realization>  
+  <association id="154">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="155" name="partMapper"/>      
+      <multiplicity id="156" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="157">    
+    <end type="SOURCE" refId="128"/>    
+    <end type="TARGET" refId="49"/>  
+  </realization>  
+  <association id="158">    
+    <end type="SOURCE" refId="74" navigable="false">      
+      <attribute id="159" name="category"/>      
+      <multiplicity id="160" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="107" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="161">    
+    <end type="SOURCE" refId="89"/>    
+    <end type="TARGET" refId="15"/>  
+  </realization>  
+  <association id="162">    
+    <end type="SOURCE" refId="54" navigable="false">      
+      <attribute id="163" name="categoryMapper"/>      
+      <multiplicity id="164" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="88" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="165">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="166" name="otherMapper"/>      
+      <multiplicity id="167" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="95" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="168">    
+    <bendpoint x="7470" y="1357"/>    
+    <end type="SOURCE" refId="85" navigable="false">      
+      <attribute id="169" name="employee"/>      
+      <multiplicity id="170" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="171">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="172" name="engineerMapper"/>      
+      <multiplicity id="173" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="103" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="174">    
+    <end type="SOURCE" refId="47" navigable="false">      
+      <attribute id="175" name="position"/>      
+      <multiplicity id="176" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="53" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="177">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="178" name="inventoryChangeMapper"/>      
+      <multiplicity id="179" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="111" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="180">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="181" name="payChangeMapper"/>      
+      <multiplicity id="182" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="92" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="183">    
+    <end type="SOURCE" refId="33" navigable="false">      
+      <attribute id="184" name="breakApplyMapper"/>      
+      <multiplicity id="185" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="186">    
+    <bendpoint x="11474" y="570"/>    
+    <end type="SOURCE" refId="139" navigable="false">      
+      <attribute id="187" name="part"/>      
+      <multiplicity id="188" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="136" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="189">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="142"/>  
+  </realization>  
+  <realization id="190">    
+    <end type="SOURCE" refId="61"/>    
+    <end type="TARGET" refId="3"/>  
+  </realization>  
+  <association id="191">    
+    <end type="SOURCE" refId="118" navigable="false">      
+      <attribute id="192" name="inventoryService"/>      
+      <multiplicity id="193" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="194">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="195" name="engineerService"/>      
+      <multiplicity id="196" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="142" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="197">    
+    <end type="SOURCE" refId="60" navigable="false">      
+      <attribute id="198" name="division"/>      
+      <multiplicity id="199" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="74" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="200">    
+    <end type="SOURCE" refId="97" navigable="false">      
+      <attribute id="201" name="centerMapper"/>      
+      <multiplicity id="202" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="96" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="203">    
+    <end type="SOURCE" refId="110" navigable="false">      
+      <attribute id="204" name="breakList"/>      
+      <multiplicity id="205" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="206">    
+    <end type="SOURCE" refId="69" navigable="false">      
+      <attribute id="207" name="department"/>      
+      <multiplicity id="208" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="101" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="209">    
+    <end type="SOURCE" refId="41" navigable="false">      
+      <attribute id="210" name="orderService"/>      
+      <multiplicity id="211" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="131" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="212">    
+    <end type="SOURCE" refId="73" navigable="false">      
+      <attribute id="213" name="engineerService"/>      
+      <multiplicity id="214" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="142" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="215">    
+    <bendpoint x="7695" y="1357"/>    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="216" name="user"/>      
+      <multiplicity id="217" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="218">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="219" name="breakApplyService"/>      
+      <multiplicity id="220" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="87" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="221">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="222" name="employeeNoticeService"/>      
+      <multiplicity id="223" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="105" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="224">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="225" name="service"/>      
+      <multiplicity id="226" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="60" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="227">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="228" name="employeeNoticeService"/>      
+      <multiplicity id="229" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="105" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="230">    
+    <bendpoint x="7959" y="2000"/>    
+    <end type="SOURCE" refId="60" navigable="false">      
+      <attribute id="231" name="center"/>      
+      <multiplicity id="232" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="59" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="233">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="234" name="employeeService"/>      
+      <multiplicity id="235" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="71" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="236">    
+    <end type="SOURCE" refId="97"/>    
+    <end type="TARGET" refId="37"/>  
+  </realization>  
+  <realization id="237">    
+    <end type="SOURCE" refId="54"/>    
+    <end type="TARGET" refId="4"/>  
+  </realization>  
+  <association id="238">    
+    <end type="SOURCE" refId="60" navigable="false">      
+      <attribute id="239" name="serviceStatus"/>      
+      <multiplicity id="240" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="130" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="241">    
+    <end type="SOURCE" refId="70" navigable="false">      
+      <attribute id="242" name="customerNoticeService"/>      
+      <multiplicity id="243" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="49" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="244">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="245" name="criteria"/>      
+      <multiplicity id="246" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="65" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="247">    
+    <end type="SOURCE" refId="128" navigable="false">      
+      <attribute id="248" name="customerNoticeMapper"/>      
+      <multiplicity id="249" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="250">    
+    <end type="SOURCE" refId="125" navigable="false">      
+      <attribute id="251" name="orderService"/>      
+      <multiplicity id="252" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="131" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="253">    
+    <end type="SOURCE" refId="97" navigable="false">      
+      <attribute id="254" name="reserveMapper"/>      
+      <multiplicity id="255" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="84" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="256">    
+    <end type="SOURCE" refId="90" navigable="false">      
+      <attribute id="257" name="part"/>      
+      <multiplicity id="258" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="136" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="259">    
+    <end type="SOURCE" refId="39" navigable="false">      
+      <attribute id="260" name="employeeNoticeService"/>      
+      <multiplicity id="261" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="105" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="262">    
+    <end type="SOURCE" refId="135" navigable="false">      
+      <attribute id="263" name="engineerService"/>      
+      <multiplicity id="264" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="142" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="265">    
+    <end type="SOURCE" refId="41" navigable="false">      
+      <attribute id="266" name="engineerService"/>      
+      <multiplicity id="267" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="142" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="268">    
+    <end type="SOURCE" refId="118" navigable="false">      
+      <attribute id="269" name="reserveService"/>      
+      <multiplicity id="270" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="137" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="271">    
+    <end type="SOURCE" refId="123" navigable="false">      
+      <attribute id="272" name="suggestBoardService"/>      
+      <multiplicity id="273" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="119" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="274">    
+    <end type="SOURCE" refId="47" navigable="false">      
+      <attribute id="275" name="department"/>      
+      <multiplicity id="276" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="101" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="277">    
+    <end type="SOURCE" refId="124" navigable="false">      
+      <attribute id="278" name="downloadNoticeMapper"/>      
+      <multiplicity id="279" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="106" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="280">    
+    <end type="SOURCE" refId="97" navigable="false">      
+      <attribute id="281" name="divisionMapper"/>      
+      <multiplicity id="282" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="138" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="283">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="284" name="employeeMapper"/>      
+      <multiplicity id="285" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="129" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="286">    
+    <end type="SOURCE" refId="125" navigable="false">      
+      <attribute id="287" name="partService"/>      
+      <multiplicity id="288" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="289">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="290" name="employee"/>      
+      <multiplicity id="291" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="292">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="293" name="changeMapper"/>      
+      <multiplicity id="294" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="92" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="295">    
+    <end type="SOURCE" refId="61" navigable="false">      
+      <attribute id="296" name="partMapper"/>      
+      <multiplicity id="297" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="298">    
+    <end type="SOURCE" refId="118" navigable="false">      
+      <attribute id="299" name="resultService"/>      
+      <multiplicity id="300" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="109" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="301">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="302" name="monthlyPayMapper"/>      
+      <multiplicity id="303" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="100" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="304">    
+    <end type="SOURCE" refId="143"/>    
+    <end type="TARGET" refId="82"/>  
+  </realization>  
+  <association id="305">    
+    <end type="SOURCE" refId="78" navigable="false">      
+      <attribute id="306" name="part"/>      
+      <multiplicity id="307" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="136" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="308">    
+    <end type="SOURCE" refId="124"/>    
+    <end type="TARGET" refId="42"/>  
+  </realization>  
+  <association id="309">    
+    <end type="SOURCE" refId="78" navigable="false">      
+      <attribute id="310" name="statusId"/>      
+      <multiplicity id="311" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="81" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="312">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <association id="313">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="314" name="usingPartMapper"/>      
+      <multiplicity id="315" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="67" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="316">    
+    <end type="SOURCE" refId="89" navigable="false">      
+      <attribute id="317" name="localeMapper"/>      
+      <multiplicity id="318" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="99" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="319">    
+    <end type="SOURCE" refId="77" navigable="false">      
+      <attribute id="320" name="attachFile"/>      
+      <multiplicity id="321" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="322">    
+    <end type="SOURCE" refId="120" navigable="false">      
+      <attribute id="323" name="part"/>      
+      <multiplicity id="324" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="136" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="325">    
+    <end type="SOURCE" refId="76" navigable="false">      
+      <attribute id="326" name="employee"/>      
+      <multiplicity id="327" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="328">    
+    <end type="SOURCE" refId="61" navigable="false">      
+      <attribute id="329" name="productMapper"/>      
+      <multiplicity id="330" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="126" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="331">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="332" name="downloadNoticeService"/>      
+      <multiplicity id="333" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="334">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="335" name="payChangeMapper"/>      
+      <multiplicity id="336" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="92" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="337">    
+    <end type="SOURCE" refId="121" navigable="false">      
+      <attribute id="338" name="empAlert"/>      
+      <multiplicity id="339" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="105" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="340">    
+    <end type="SOURCE" refId="61" navigable="false">      
+      <attribute id="341" name="statusMapper"/>      
+      <multiplicity id="342" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="113" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="343">    
+    <end type="SOURCE" refId="61" navigable="false">      
+      <attribute id="344" name="inventoryChangeMapper"/>      
+      <multiplicity id="345" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="111" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="346">    
+    <end type="SOURCE" refId="136" navigable="false">      
+      <attribute id="347" name="partStatus"/>      
+      <multiplicity id="348" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="104" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="349">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="350" name="engineerService"/>      
+      <multiplicity id="351" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="142" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="352">    
+    <bendpoint x="7716" y="1357"/>    
+    <end type="SOURCE" refId="78" navigable="false">      
+      <attribute id="353" name="user"/>      
+      <multiplicity id="354" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="355">    
+    <end type="SOURCE" refId="98" navigable="false">      
+      <attribute id="356" name="centerService"/>      
+      <multiplicity id="357" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="82" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="358">    
+    <end type="SOURCE" refId="133"/>    
+    <end type="TARGET" refId="119"/>  
+  </realization>  
+  <association id="359">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="360" name="employeeService"/>      
+      <multiplicity id="361" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="71" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="362">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="363" name="division"/>      
+      <multiplicity id="364" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="74" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="365">    
+    <end type="SOURCE" refId="61" navigable="false">      
+      <attribute id="366" name="categoryMapper"/>      
+      <multiplicity id="367" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="88" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="368">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="369" name="repairMapper"/>      
+      <multiplicity id="370" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="79" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="371">    
+    <end type="SOURCE" refId="61" navigable="false">      
+      <attribute id="372" name="payChangeMapper"/>      
+      <multiplicity id="373" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="92" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="374">    
+    <end type="SOURCE" refId="55" navigable="false">      
+      <attribute id="375" name="engineerService"/>      
+      <multiplicity id="376" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="142" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="377">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="378" name="serviceReserveMapper"/>      
+      <multiplicity id="379" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="84" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="380">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="381" name="engineerService"/>      
+      <multiplicity id="382" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="142" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="383">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="384" name="reserveMapper"/>      
+      <multiplicity id="385" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="84" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="386">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="387" name="partmapper"/>      
+      <multiplicity id="388" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="389">    
+    <end type="SOURCE" refId="112" navigable="false">      
+      <attribute id="390" name="changeType"/>      
+      <multiplicity id="391" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="115" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="392">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="393" name="serviceList"/>      
+      <multiplicity id="394" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="60" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="395">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="396" name="inventoryChangeMapper"/>      
+      <multiplicity id="397" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="111" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="398">    
+    <end type="SOURCE" refId="90" navigable="false">      
+      <attribute id="399" name="product"/>      
+      <multiplicity id="400" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="401">    
+    <end type="SOURCE" refId="121" navigable="false">      
+      <attribute id="402" name="engineerService"/>      
+      <multiplicity id="403" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="142" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="404">    
+    <end type="SOURCE" refId="97" navigable="false">      
+      <attribute id="405" name="employeeMapper"/>      
+      <multiplicity id="406" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="129" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="407">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="408" name="payService"/>      
+      <multiplicity id="409" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="410">    
+    <end type="SOURCE" refId="134" navigable="false">      
+      <attribute id="411" name="engineerService"/>      
+      <multiplicity id="412" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="142" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="413">    
+    <end type="SOURCE" refId="45"/>    
+    <end type="TARGET" refId="71"/>  
+  </realization>  
+  <association id="414">    
+    <end type="SOURCE" refId="61" navigable="false">      
+      <attribute id="415" name="divisionMapper"/>      
+      <multiplicity id="416" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="138" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="417">    
+    <end type="SOURCE" refId="133" navigable="false">      
+      <attribute id="418" name="suggestBoardMapper"/>      
+      <multiplicity id="419" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="420">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="421" name="employeeNoticeService"/>      
+      <multiplicity id="422" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="105" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="423">    
+    <end type="SOURCE" refId="94" navigable="false">      
+      <attribute id="424" name="partService"/>      
+      <multiplicity id="425" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="426">    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="427" name="part"/>      
+      <multiplicity id="428" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="136" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="429">    
+    <end type="SOURCE" refId="121" navigable="false">      
+      <attribute id="430" name="suggestBoardService"/>      
+      <multiplicity id="431" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="119" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="432">    
+    <end type="SOURCE" refId="135" navigable="false">      
+      <attribute id="433" name="localeService"/>      
+      <multiplicity id="434" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="435">    
+    <end type="SOURCE" refId="47" navigable="false">      
+      <attribute id="436" name="center"/>      
+      <multiplicity id="437" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="59" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="438">    
+    <end type="SOURCE" refId="135" navigable="false">      
+      <attribute id="439" name="reservationService"/>      
+      <multiplicity id="440" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="441">    
+    <end type="SOURCE" refId="118" navigable="false">      
+      <attribute id="442" name="engineerService"/>      
+      <multiplicity id="443" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="142" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="444">    
+    <end type="SOURCE" refId="60" navigable="false">      
+      <attribute id="445" name="employee"/>      
+      <multiplicity id="446" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="447">    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="448" name="centerService"/>      
+      <multiplicity id="449" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="82" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="450">    
+    <end type="SOURCE" refId="136" navigable="false">      
+      <attribute id="451" name="division"/>      
+      <multiplicity id="452" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="74" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="453">    
+    <end type="SOURCE" refId="143" navigable="false">      
+      <attribute id="454" name="serviceMapper"/>      
+      <multiplicity id="455" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="132" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="456">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="131"/>  
+  </realization>  
+  <realization id="457">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="87"/>  
+  </realization>  
+  <association id="458">    
+    <end type="SOURCE" refId="85" navigable="false">      
+      <attribute id="459" name="breaks"/>      
+      <multiplicity id="460" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="461">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="462" name="changeService"/>      
+      <multiplicity id="463" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="464">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="109"/>  
+  </realization>  
+  <association id="465">    
+    <end type="SOURCE" refId="60" navigable="false">      
+      <attribute id="466" name="user"/>      
+      <multiplicity id="467" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="468">    
+    <end type="SOURCE" refId="54" navigable="false">      
+      <attribute id="469" name="divisionMapper"/>      
+      <multiplicity id="470" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="138" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="471">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="472" name="empService"/>      
+      <multiplicity id="473" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="71" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="474">    
+    <end type="SOURCE" refId="41" navigable="false">      
+      <attribute id="475" name="partService"/>      
+      <multiplicity id="476" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="477">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="478" name="breakApplyService"/>      
+      <multiplicity id="479" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="87" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="480">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="105"/>  
+  </realization>  
+  <association id="481">    
+    <end type="SOURCE" refId="60" navigable="false">      
+      <attribute id="482" name="serviceType"/>      
+      <multiplicity id="483" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="102" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="484">    
+    <end type="SOURCE" refId="110" navigable="false">      
+      <attribute id="485" name="asList"/>      
+      <multiplicity id="486" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="60" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="487">    
+    <end type="SOURCE" refId="116" navigable="false">      
+      <attribute id="488" name="service"/>      
+      <multiplicity id="489" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="82" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="490">    
+    <end type="SOURCE" refId="54" navigable="false">      
+      <attribute id="491" name="partMapper"/>      
+      <multiplicity id="492" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="493">    
+    <end type="SOURCE" refId="122" navigable="false">      
+      <attribute id="494" name="orderService"/>      
+      <multiplicity id="495" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="131" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="496">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="497" name="employeeNoticeService"/>      
+      <multiplicity id="498" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="105" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="499">    
+    <end type="SOURCE" refId="61" navigable="false">      
+      <attribute id="500" name="partUsingModelMapper"/>      
+      <multiplicity id="501" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="502">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="503" name="employeeNoticeMapper"/>      
+      <multiplicity id="504" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="80" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="505">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="506" name="resultMapper"/>      
+      <multiplicity id="507" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="50" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="508">    
+    <end type="SOURCE" refId="97" navigable="false">      
+      <attribute id="509" name="localeMapper"/>      
+      <multiplicity id="510" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="99" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
